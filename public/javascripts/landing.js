@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
 
 // navigation to scroll 
 
@@ -11,5 +11,5 @@ $(window).scroll(function() {
       top: '0'
     });
 };
-});
+});*/
 
