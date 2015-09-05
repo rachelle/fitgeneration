@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>The Workout Generator</title>
+  <link rel="stylesheet" href="stylesheets/style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+
+  <script src="javascripts/Workout.js"></script>
+  <script src="javascripts/WorkoutCollection.js"></script>
+</head>
+
+<body>
+  <h1>Workout Generator</h1>
+
+  <form id="new-workout">
+    <input type="text" name="workout[title]" id="workout-title" placeholder="workout plan?">
+
+    <select name="workout[bodypart]" id="workout-bodypart">
+      <option value="Old Fashioned">Back</option>
+      <option value="Legs">Legs</option>
+      <option value="Chest">Chest</option>
+      <option value="Arms">Arms</option>
+    </select><span class="after">▾</span>
+
+    <input type="submit" value="Save Workout"></input>
+  </form>
+
+  <div class="workouts-wrapper">
+    <!-- <ul id="doughnuts"></ul> -->
+  </div>
+
+
+  <script src="javascripts/main.js"></script>
+
+  <!-- Templates. -->
+
+  <script type="text/template" id="workout-template">
+    <li data-id="<%= workout.id %>">
+      <span><%= workout.title %> – <em><%= workout.bodypart%></em></span>
+      <button class="destroy" title="Delete this workout.">X</button>
+    </li>
+  </script>
+
+</body>
+</html>
