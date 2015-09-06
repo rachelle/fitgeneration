@@ -1,25 +1,56 @@
+/* FONTS */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,700,900);
+
+/* OVERALL ASPECT */
+
 body {
-  background-color:white;
+  background-color: #f2f2f2;
+  font-size: 16px;
   background-image: radial-gradient(circle at 0% 0%, rgb(10,10,16), rgb(72,72,96), rgb(10,10,16));
   background-size: cover;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
 }
 
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway";
+    font-weight: 300;
+    color: black;
+}
 
-.introduction{
+.logoname {
+  color: #FF3555;
+  font-size: 25px;
+  padding-left: 20px;
+}
 
+nav {
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a.navlinks {
+  color: black;
+}
+
+.introduction {
   background-size: cover;
   height: 45.938rem;
   overflow: auto;
-
 }
 
 .strong {
- 
   width: 1450px;
+  -webkit-filter: blur(2px);
+}
 
- -webkit-filter: blur(2px);
-}
-}
 
 .introduction h1{
   margin-top: 17.5rem;
@@ -64,6 +95,7 @@ font-size: 1.125rem;
   height: 180%;
   -webkit-filter: blur(2px);
   filter: blur(2px);
+  color: black;
 }
 
 .container{
