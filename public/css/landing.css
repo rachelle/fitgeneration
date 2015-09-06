@@ -14,30 +14,10 @@ body {
 }
 
 /* Titles */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
     font-family: "Raleway";
     font-weight: 300;
     color: black;
-}
-
-.logoname {
-  color: #FF3555;
-  font-size: 25px;
-  padding-left: 20px;
-}
-
-nav {
-  color: black;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-a.navlinks {
-  color: black;
 }
 
 .introduction {
