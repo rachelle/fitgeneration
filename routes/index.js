@@ -124,6 +124,7 @@ router.get('/logout',  SessionsController.sessionsDelete);
 /* users controllers */
 router.get('/auth/register',                UsersController.usersNew);
 router.post('/auth/register',               UsersController.usersCreate);
+router.get('/users',            isLoggedIn, UsersController.usersIndex);
 router.get('/users/:id',        isLoggedIn, UsersController.userShow);
 router.get('/users/:id/edit',   isLoggedIn, UsersController.userEdit);
 router.put('/users/:id',        isLoggedIn, UsersController.userUpdate);

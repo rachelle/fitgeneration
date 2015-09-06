@@ -12,8 +12,21 @@ var methodOverride = require('method-override');
 //||||||||||||||||||||||||||--
 var User    = require('../models/User');
 
+/* renders all users */
+var usersIndex = function(req, res, next){
+  User.find(function(err, users) {
+    if (err) res.json({ message: 'Could not find any users'}); 
+    res.render('./users', {
+      title: "Here all the users", 
+      users: users,
+      user: req.user
+    
+  });
+});
+};
 
-//||||||||||||||||||||||||||--
+  
+    //||||||||||||||||||||||||||--
 // NEW USER
 //||||||||||||||||||||||||||--
 function usersNew  (req, res) {
@@ -96,7 +109,7 @@ var userUpdate = function(req, res, next) {
 
 module.exports = {
 
-
+    usersIndex:    usersIndex,
     usersNew:      usersNew,
     usersCreate:   usersCreate,
     userShow:      userShow,
@@ -106,12 +119,4 @@ module.exports = {
 
 };
 
-// res.render('users/chat', {user: req.user}); {otherUser: req.username}
-
-///So there will be two different forms one is to register as a user
-//and the other is to register as an owner
-//that will be an option in the forms when a user clicks register
-//it will go to one route when a owner clicks register it will
-//go to another route
-//we are doing tis since u cant authenticate more than one model
 
