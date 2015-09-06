@@ -4,7 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
  
   <title>Cake Builder</title> 
-  <link rel="stylesheet" type="text/css" href="/../../stylesheets/show.css">
+  <link rel="stylesheet" type="text/css" href="/../../stylesheets/register.css">
 
  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
@@ -25,38 +25,25 @@
     </div>
   </nav>
 
+  <!-- edit form   -->
+  <div class="container">
+      <div id="edit center-align">
+        <h3>edit profile</h3>
+      <form action="" method="POST">
+        <input class="change" type="text"  placeholder="name" name="name"/>
+        <input type="text" placeholder="email" name="email" />
+        <input type="text" placeholder="username" name="username"/>
+        <input type="text" placeholder="weight" name="weight"/>
+        <input type="text" placeholder="height" name="height"/>
+        <input type="submit" value="save changes" >
+      </form>
+     </div>
+    </div>
+
+    </div>
+
   
 
-  <div class="container center-align right"> 
-   <section class="users-info">
-   <form action="/users/<%= user._id %>?_method=PUT" method="POST">  
-    <div class="row">
-      <span class="edit-profile left">edit profile</span>
-    <div class="input-field col s12"> 
-      name: <input placeholder="<%= user.username %>" name="username">
-    </div>
-    <div class="input-field col s12"> 
-    profile photo:
-    <input placeholder="<%= user.photo %>" name="photo" id="photo" >
-  </div>
-
-    <div class="input-field col s12">
-      weight: <input placeholder="<%=user.weight %>" name="weight">
-    </div>
-    <div class="input-field col s12"> 
-      status: <input placeholder="<%= user.status %>" name="status">
-    </div>
-    <div class="input-field col s12"> 
-      gym: <input placeholder="<%= user.gym %>" name="gym"> 
-    </div>
-    <div class="input-field col s6"> 
-      goals: <textarea placeholder="<%= user.goals %>" name="goals"></textarea>
-    </div>
-     <input type="submit" value="save changes">
-  </div>
-</form>
-</section>
-</div>
 
 <footer class="page-footer grey darken-2">
           <div class="container">

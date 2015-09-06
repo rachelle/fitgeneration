@@ -84,14 +84,43 @@ h1 {
   background: rgba(0,0,0,.8);
   border-radius: 4px;
   position: relative;
+  color: #fff;
+
+}
+
+#edit{
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  background: white;
+  border-radius: 4px;
+
 }
 
 #login form{
-  //background:#f0f0f0;
+  background:#f0f0f0;
   padding: 30px 30px;
 }
 
-input[type="email"], input[type="password"]{
+
+#edit-form form{
+  background:#f0f0f0;
+  padding: 30px 30px;
+}
+
+input{
+  width:92%;
+  background:#fff;
+  background: transparent;
+  margin-bottom:4%;
+  border:1px solid black;
+  border: 1px solid black;
+  padding:4%;
+  font-family:'Open Sans', sans-serif;
+}
+
+input[type="email"], input[type="password"], {
   width:92%;
   background:#fff;
   background: transparent;
@@ -101,8 +130,22 @@ input[type="email"], input[type="password"]{
   padding:4%;
   font-family:'Open Sans',sans-serif;
   font-size:95%;
-  color:#555;
+  color: #fff;
 }
+
+input[type="text"], {
+  width:92%;
+  background:#fff;
+  background: transparent;
+  margin-bottom:4%;
+  border:1px solid #ccc;
+  border: 1px solid rgba(255,255,255,.2);
+  padding:4%;
+  font-family:'Open Sans',sans-serif;
+  font-size:95%;
+  color: #fff;
+}
+
 
 input[type="submit"]{
   width:100%;
@@ -110,12 +153,12 @@ input[type="submit"]{
   background: transparent;
   border:0;
   padding:4%;
-  color: #fff;
+  color: black;
   cursor: pointer;
   transition: background .3s;
   -webkit-transition: background .3s;
-  border: 1px solid rgba(0,0,0,.5);
-  border: 1px solid rgba(255,255,255,.2);
+  border: 1px solid black;
+  border: 1px solid black;
 }
 
 input[type="submit"]:hover{
