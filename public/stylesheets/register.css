@@ -100,6 +100,7 @@ h1 {
 
 #login form{
   background:#f0f0f0;
+  margin: 0;
   padding: 30px 30px;
 }
 
@@ -130,7 +131,7 @@ input[type="email"], input[type="password"], {
   padding:4%;
   font-family:'Open Sans',sans-serif;
   font-size:95%;
-  color: #fff;
+  color: #555A5C;
 }
 
 input[type="text"], {
@@ -149,18 +150,29 @@ input[type="text"], {
 
 input[type="submit"]{
   width:100%;
-  //background: #3399cc;
+  background: #3399cc;
   background: transparent;
   border:0;
+  background-color: #069FAD;
   padding:4%;
-  color: black;
+  font-size: 16px;
+  color: white;
   cursor: pointer;
   transition: background .3s;
   -webkit-transition: background .3s;
   border: 1px solid black;
   border: 1px solid black;
+  cursor: pointer;
 }
 
 input[type="submit"]:hover{
   background-color: tomato;
+}
+
+.social-btn{
+ margin-top: 10px;
+ width: 200px;
+ height: 50px;
+ font-size: 14px;
+ background-color: #415E9B;
 }
