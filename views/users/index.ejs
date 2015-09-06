@@ -4,7 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
  
   <title>her era</title> 
-  <link rel="stylesheet" type="text/css" href="/../../stylesheets/show.css">
+  <link rel="stylesheet" type="text/css" href="/../../stylesheets/allusers.css">
 
  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
@@ -24,33 +24,31 @@
       </ul>
     </div>
   </nav>
-
-
-
-
-<div class="row user-content">
-        <div class="col s6 user-content center-align">
-          <div class="card blue-grey darken-1 user-card">
-            <div class="white-text center-align">
+ <div class="container">
+  <div class="row user-content">
+        <div class="col s6 center-align">
+          <div class="card blue-grey darken-1 user-info">
+            <div class="white-text center-align user-card">
               <img class="avatar" src="https://s-media-cache-ak0.pinimg.com/236x/ac/a6/02/aca602b53f3120db07b0e956bb2bcc75.jpg">
               <br />
               <span class="card-title"><%= user.username %></span>
-              <p class="user-link">view profile</p>
-               <p class="user-link">edit profile</p>
+             
+               
           </div>
-            <ul class="collection with-header">
-        <li class="collection-header"><h4>Status</h4></li>
+            <ul class="collection with-header ">
+        <li class="collection-header"><h5>Status</h5></li>
         <li class="collection-item">height</li>
         <li class="collection-item">weight</li>
-        <li class="collection-item">status</li>
-        <li class="collection-item">goal</li>
+        <li class="collection-item">
+          goals</li>
       </ul>
        <div class="center-align">
-          <button class="btn btn-primary workout-btn">Connect</button>
+          <button class="btn btn-primary message-btn">Connect</button>
           </div>
           </div>
          
        </div>
      </div>
+    </div>
 </body>
 </html>
