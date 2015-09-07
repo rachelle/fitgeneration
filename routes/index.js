@@ -1,14 +1,16 @@
 var express = require('express');
 var router  = express.Router();
+
 var passport       = require('passport');
 var methodOverride = require('method-override');
+
 var User = require('../models/User');
 
 // require controllers 
 var SessionsController = require('../controllers/Sessions');
-var UsersController    = require('../controllers/Users');
 var PhotosController   = require('../controllers/Photos');
 var WorkoutsController = require('../controllers/Workouts');
+var UsersController    = require('../controllers/Users');
 
 /* Adding a root route */
 router.get('/', function (req, res) {
@@ -77,15 +79,6 @@ router.put('/photos/:id',      isLoggedIn, PhotosController.renderPhotosUpdate);
 router.get('/photos/:id',      isLoggedIn, PhotosController.renderPhotosShow);
 router.delete('/photos/:id',   isLoggedIn, PhotosController.deletePhoto);
 
-/* users controllers */
-router.get('/auth/register',              UsersController.usersNew);
-router.post('/auth/register',             UsersController.usersCreate);
-router.get('/users',          isLoggedIn, UsersController.usersIndex);
-router.get('/users/:id',      isLoggedIn, UsersController.userShow);
-router.get('/users/:id/edit', isLoggedIn, UsersController.userEdit);
-router.put('/users/:id',      isLoggedIn, UsersController.userUpdate);
-router.delete('/users/:id',   isLoggedIn, UsersController.userDelete);
-
 /* workouts controllers */
 router.get('/workouts',          isLoggedIn, WorkoutsController.renderWorkoutsIndex);
 router.get('/workouts/new',      isLoggedIn, WorkoutsController.renderWorkoutsNew);
@@ -94,6 +87,16 @@ router.get('/workouts/:id/edit', isLoggedIn, WorkoutsController.renderWorkoutsEd
 router.put('/workouts/:id',      isLoggedIn, WorkoutsController.renderWorkoutsUpdate);
 router.get('/workouts/:id',      isLoggedIn, WorkoutsController.renderWorkoutsShow);
 router.delete('/workouts/:id',   isLoggedIn, WorkoutsController.deleteWorkout);
+
+
+/* users controllers */
+router.get('/auth/register',              UsersController.usersNew);
+router.post('/auth/register',             UsersController.usersCreate);
+router.get('/users',          isLoggedIn, UsersController.usersIndex);
+router.get('/users/:id',      isLoggedIn, UsersController.userShow);
+router.get('/users/:id/edit', isLoggedIn, UsersController.userEdit);
+router.put('/users/:id',      isLoggedIn, UsersController.userUpdate);
+router.delete('/users/:id',   isLoggedIn, UsersController.userDelete);
 
 
 module.exports = router;

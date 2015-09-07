@@ -2,8 +2,6 @@ require('dotenv').load();
 var express = require('express');
 var path = require('path');
 var http = require('http');
-
-
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -22,9 +20,11 @@ var Facebook = require('./config/facebook');
 var Twitter  = require('./config/twitter');
 
 var app = express();
-// load mongoose and connect to a database
 
-app.engine('html', require('ejs').renderFile);
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 //||||||||||||||||||||||||||--
 // CREATE MONGO DB
 //||||||||||||||||||||||||||--
@@ -37,14 +37,6 @@ if (process.env.NODE_ENV === 'production') {
 // CONNECT TO OUR MONGO DATABASE
 //||||||||||||||||||||||||||--
 mongoose.connect(mongoURI);
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-/*app.set('view engine', 'ejs');*/
-app.engine('html', require('ejs').renderFile); app.set('view engine', 'html');
-
-
-
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -68,8 +60,10 @@ app.use(passport.session());
 
 app.locals.title = 'fitGeneration';
 
-
+/* source in models */
 var User = require('./models/User');
+var Photo = require('./models/Photo');
+var Workout = require('./models/Workout')
 
 app.use('/', routes);
 

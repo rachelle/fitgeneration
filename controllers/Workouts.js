@@ -8,9 +8,9 @@ var User    = require('../models/User');
 var router = express.Router();
 
 /* get all users workouts */
-module.exports.renderWorkoutsIndex = function(req, res, next) {
-    Workouts.find({}, function (err, workouts) {
-      if (err) res.send(err);
+module.exports.renderWorkoutsIndex = function(req, res, next){
+    Workout.find(function(err, workouts) {
+      if (err) res.send('> ' + err);
         res.render('./workouts',
         {
           workouts: workouts, 
@@ -20,13 +20,13 @@ module.exports.renderWorkoutsIndex = function(req, res, next) {
 };
 
 /* renders a new workout plan */
-module.exports.renderWorkoutsNew = function(req, res) {
+module.exports.renderWorkoutsNew = function(req, res){
     var workouts = Workout.all 
       res.render('./workouts/new', {user: req.user, workouts:workouts});
 };
 
 /* create a workout plan */
-module.exports.renderWorkoutsCreate = function(req, res, next) {
+module.exports.renderWorkoutsCreate = function(req, res, next){
     var Workout = new Workout({
       name: req.body.name,
       reps: req.body.reps, 
@@ -40,33 +40,33 @@ module.exports.renderWorkoutsCreate = function(req, res, next) {
     console.log(req.body); 
     workout.save(function(err){
       if(err){res.send('> ', + err);}
-        req.user.workouts.push(workouts); 
+        req.user.workouts.push(workout); 
         req.user.save(); 
         res.redirect('/workouts/' + workout.id)
     });
 };
 
 /* edit your workout plan */
-module.exports.renderWorkoutsEdit = function(req, res, next) {
-     var id = req.params.id; 
-     var workout_id = req.params.id; 
+module.exports.renderWorkoutsEdit = function(req, res, next){
+  var id = req.params.id; 
+  var workout_id = req.params.id; 
 
-     Workout.findById({_id:id}, function(err, workout){
-      console.log('workout', workout);
-      if(err) res.send(err); 
-        res.render(
-          './workouts/edit', {
-            workout: workout, 
-            user: req.user
-          });
-     })
+  Workout.findById({_id:id}, function(err, workout){
+    console.log('workout', workout);
+    if(err) res.send(err); 
+      res.render(
+        './workouts/edit', {
+          workout: workout, 
+          user: req.user
+        });
+    })
 };
 
 /* update workout for any changes */
-module.exports.renderWorkoutsUpdate = function(req, res, next) {
+module.exports.renderWorkoutsUpdate = function(req, res, next){
     var id = req.params.id; 
 
-    Workout.findById({_id:id}, function(err, workout) {
+    Workout.findById({_id:id}, function(err, workout){
       if(err) res.send(err); 
         if (req.body.name) workout.name = req.body.name; 
         if (req.body.reps) workout.reps = req.body.reps;
@@ -76,8 +76,8 @@ module.exports.renderWorkoutsUpdate = function(req, res, next) {
         if (req.body.date) workout.date = req.body.date; 
         if (req.body.bodypart) workout.bodypart = req.body.bodypart; 
     
-    workout.save(function(err) {
-      if (err) res.send(err); 
+    workout.save(function(error) {
+      if (error) res.send(error); 
         res.redirect('/workouts/' + id);
     });
 
@@ -85,11 +85,12 @@ module.exports.renderWorkoutsUpdate = function(req, res, next) {
 };
 
 /* renders workout show page */
-module.exports.renderWorkoutsShow = function(req, res, next) {
+module.exports.renderWorkoutsShow = function(req, res, next){
     var id = req.params.id; 
 
-    Workout.findByAndRemove({_id:id}, function(err, workout) {
-      if(err) res.send(err); 
+    Workout.findById({_id:id}, function (error, workout) {
+      console.log('workout', workout);
+      if(error) res.send(error); 
       res.render(
         './workouts/show', {
           workout: workout, 
@@ -103,8 +104,8 @@ module.exports.deleteWorkout = function(req, res) {
     var id = req.params.id; 
     var workout_id = req.params.id; 
 
-    Workout.findByIdAndRemove({_id:id}, function (err) {
-    if (err) res.send(err);
+    Workout.findByIdAndRemove({_id:id}, function (error) {
+    if (error) res.send(error);
       res.redirect('/workouts')
   });
 };
