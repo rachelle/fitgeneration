@@ -1,3 +1,17 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.banner{
+  background:url("/images/fitness-journey.jpg");
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .logoname {
   color: #FF3555;
   font-size: 25px;
@@ -13,7 +27,6 @@ a.navlinks {
   width: 600px;
   margin: 0;
   margin-top: 20px;
-
 }
 
 .user-info {
@@ -31,3 +44,74 @@ a.navlinks {
   margin-right: 30px;
   margin-bottom: 10px;
 }
+
+
+
+#photoform{
+  width: 400px;
+  margin: 0px auto;
+  text-align: center;
+  margin-top: 40px;
+
+}
+
+.photo-content{
+  background: white;
+  border: 0 none;
+  margin-top: 60px;
+  margin-left: 420px;
+  border-radius: 3px;
+  padding: 20px 20px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  width: 600px;
+ 
+  
+}
+
+#photoform input{
+  padding: 15px;
+  border: 2px solid #007D89;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  width: 100%;
+  margin-top: 10px;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  font-size: 13px;
+}
+
+
+.action-button{
+  width: 150px;
+  height: 50px;
+  background: #069FAD;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
+  cursor: pointer;
+}
+
+#photoform .action-button:hover, 
+#photoform .action-button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+
+.photo-title{
+  font-size: 25px;
+  color: #2C3E50;
+  margin-bottom: 10px;
+}
+/* end of photo new stylesheet */
+.track {
+  color: tomato;
+
+}
+
+
+

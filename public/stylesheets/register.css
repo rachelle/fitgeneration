@@ -1,5 +1,5 @@
 /*animation imports */
-@keyframes text-fade {
+/*@keyframes text-fade {
   0% { opacity: 0; }
   75% { opacity: 0; }
   100% { opacity: 1; }
@@ -25,7 +25,7 @@
   75% { opacity: 0; }
   100% { opacity: 1; }
 }
-
+*/
 
 body { 
   background: url("../images/legs.jpg") no-repeat center center fixed; 

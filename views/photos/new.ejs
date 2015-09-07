@@ -15,10 +15,36 @@
 </head> 
 <body> 
 
-<div class="container"> 
+<div class="banner"> 
+  
+  
+  <div class="photo-content center-align">
+    <form action="/photos" method="Post" id="photoform">
+       <h3 class="track center-align">Fitness Journey</h3>
+      <h2 class="photo-title">+ progress photo</h2> 
+
+     
+      <div class="row">
+        <div class="col s12"> 
+          <input type="text" name="caption"
+          placeholder="caption"/>
+
+      
+          <input type="date" name="date_taken" placeholder="date"/>
+        
+      
+           <input type="text" name="image" placeholder="image"/>
+       
+
+      <button type="submit" name="Submit" class="action-button" value="Submit">Submit</button>
+    </div>
+  </div>
+    </form> 
 
 
-<h3>Add Photo to your fitness journey</h3> 
+
+  </div> 
+    
 </div>
 </body> 
 </html>
