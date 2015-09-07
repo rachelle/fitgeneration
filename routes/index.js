@@ -11,7 +11,7 @@ var User = require('../models/User');
 var SessionsController = require('../controllers/Sessions');
 var UsersController   = require('../controllers/Users');
 var workoutsController = require("../controllers/workout");
-
+var PhotosController = require('../controllers/Photos');
 
 /* Adding a root route */
 router.get('/', function (req, res) {
@@ -19,9 +19,7 @@ router.get('/', function (req, res) {
 });
 
 
-//||||||||||||||||||||||||||--
-// O_AUTHENTICATION ROUTES
-//||||||||||||||||||||||||||--
+/* oauth authentication for fb/twitter accounts */
 router.get('/auth/facebook', passport.authenticate('facebook',
   {
     scope:
@@ -55,51 +53,7 @@ router.get('/auth/twitter/callback', passport.authenticate('twitter', {
   })
 );
 
-/*router.get('/register', function (req, res) {
-  res.render('auth/register');
-});
-
-router.post('/register', function (req, res) {
-  User.register(new User({username: req.body.username, name: req.body.name}), req.body.password, function(err, user) {
-    if (err) return res.render('auth/register', {user: user});
-    passport.authenticate('local')(req, res, function () {
-      req.session.save(function (err) {
-        if (err) {
-          return next(err);
-        }
-        res.redirect('/');
-      });
-    });
-  });
-});
-
-router.get('/login', function(req, res) {
-  res.render('auth/login', {user : req.user});
-});
-
-router.post('/login', passport.authenticate(
-  'local',
-  {
-    failureRedirect: '/login'
-  }),
-  function (req, res, next) {
-    req.session.save(function (err) {
-      if (err) return next(err);
-      res.redirect('/');
-    });
-  }
-);
-
-router.get('/logout', function (req, res) {
-  req.logout();
-  res.redirect('/');
-});
-
-router.get('/secret', isLoggedIn, function (req, res) {
-  res.render('secret', {user: req.user});
-})
-*/
-// checks if user is logged in
+/* checks if users is logged in */
 var isLoggedIn = function(req, res, next) {
   
   if (!req.isAuthenticated()) {
@@ -108,8 +62,6 @@ var isLoggedIn = function(req, res, next) {
   }
     return next();
 };
-
-
 
 // renders sessions controller
 router.get('/login',    SessionsController.sessionsNew);
@@ -131,6 +83,12 @@ router.put('/users/:id',        isLoggedIn, UsersController.userUpdate);
 router.delete('/users/:id',     isLoggedIn, UsersController.userDelete);
 module.exports = router;
 
-
-
+/* renders photos controllers */
+router.get('/photos', isLoggedIn, PhotosController.renderPhotosIndex);
+router.get('/photos/new', isLoggedIn, PhotosControllers.renders.PhotosNew); 
+router.post('/photos/', isLoggedIn, PhotosControllers.renderPhotosCreate);
+router.get('/photos/:id/edit', isLoggedIn, PhotosControllers.rendersPhotosEdit);
+router.put('/photos/:id', isLoggedIn, PhotosControllers.rendersPhotosUpdate); 
+router.get('/photos/:id', isLoggedIn, PhotosControllers.rendersPhotosShow);
+router.delete('/photos/:id', isLoggedIn, PhotosControllers.deletePuppy);
 
