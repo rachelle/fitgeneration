@@ -8,25 +8,25 @@ var User    = require('../models/User');
 var router = express.Router();
 
 /* get all users workouts */
-var WorkoutsIndex = function(req, res, next) {
+module.exports.renderWorkoutsIndex = function(req, res, next) {
     Workouts.find({}, function (err, workouts) {
       if (err) res.send(err);
         res.render('./workouts',
-          {
-            workouts: workouts, 
-            user: req.user
-          });
-      });
+        {
+          workouts: workouts, 
+          user: req.user
+        });
+    });
 };
 
 /* renders a new workout plan */
-var WorkoutsNew = function(req, res) {
+module.exports.renderWorkoutsNew = function(req, res) {
     var workouts = Workout.all 
       res.render('./workouts/new', {user: req.user, workouts:workouts});
 };
 
 /* create a workout plan */
-var WorkoutsCreate = function(req, res, next) {
+module.exports.renderWorkoutsCreate = function(req, res, next) {
     var Workout = new Workout({
       name: req.body.name,
       reps: req.body.reps, 
@@ -47,7 +47,7 @@ var WorkoutsCreate = function(req, res, next) {
 };
 
 /* edit your workout plan */
-var WorkoutsEdit = function(req, res, next) {
+module.exports.renderWorkoutsEdit = function(req, res, next) {
      var id = req.params.id; 
      var workout_id = req.params.id; 
 
@@ -63,7 +63,7 @@ var WorkoutsEdit = function(req, res, next) {
 };
 
 /* update workout for any changes */
-var WorkoutsUpdate = function(req, res, next) {
+module.exports.renderWorkoutsUpdate = function(req, res, next) {
     var id = req.params.id; 
 
     Workout.findById({_id:id}, function(err, workout) {
@@ -85,7 +85,7 @@ var WorkoutsUpdate = function(req, res, next) {
 };
 
 /* renders workout show page */
-var WorkoutsShow = function(req, res, next) {
+module.exports.renderWorkoutsShow = function(req, res, next) {
     var id = req.params.id; 
 
     Workout.findByAndRemove({_id:id}, function(err, workout) {
@@ -99,25 +99,13 @@ var WorkoutsShow = function(req, res, next) {
 };
 
 /* user can delete their workout plan */
-var WorkoutDelete = function(req, res) {
+module.exports.deleteWorkout = function(req, res) {
     var id = req.params.id; 
     var workout_id = req.params.id; 
 
-    Workouts.findByIdAndRemove({_id:id}, function (err) {
+    Workout.findByIdAndRemove({_id:id}, function (err) {
     if (err) res.send(err);
       res.redirect('/workouts')
   });
 };
 
-/* export workout module */
-module.exports = {
-  
-  WorkoutsIndex:  WorkoutsIndex,
-  WorkoutsNew:    WorkoutsNew, 
-  WorkoutsCreate: WorkoutsCreate, 
-  WorkoutsEdit:   WorkoutsEdit,
-  WorkoutsUpdate: WorkoutsUpdate, 
-  WorkoutsShow:   WorkoutsShow, 
-  WorkoutDelete:  WorkoutDelete,
-
-};

@@ -79,7 +79,7 @@ module.exports.renderPhotosShow = function(req, res, next) {
 
   Photo.findById({_id:id}, function (error, photo){
     if(error) res.send(error); 
-    res.render(
+      res.render(
       './photos/show', {
         photo: photo, 
         user: req.user
