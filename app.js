@@ -14,10 +14,6 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy; 
 var routes = require('./routes/index');
 
-/* requires api/view routes for angular */
-var viewRoute = require('./routes/view');
-var apiRoute = require('./routes/api');
-
 //||||||||||||||||||||||||||--
 // O_AUTH
 //||||||||||||||||||||||||||--
@@ -45,6 +41,13 @@ mongoose.connect(mongoURI);
 app.set('views', path.join(__dirname, 'views'));
 /*app.set('view engine', 'ejs');*/
 app.engine('html', require('ejs').renderFile); app.set('view engine', 'html');
+
+/* requires api/view routes for angular */
+var viewRoute = require('./routes/view');
+var apiRoute = require('./routes/api');
+
+app.use('/',viewRoute); 
+app.use('/',apiRoute); 
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
