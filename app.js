@@ -23,6 +23,7 @@ var Twitter  = require('./config/twitter');
 var app = express();
 // load mongoose and connect to a database
 
+app.engine('html', require('ejs').renderFile);
 //||||||||||||||||||||||||||--
 // CREATE MONGO DB
 //||||||||||||||||||||||||||--
@@ -38,7 +39,8 @@ mongoose.connect(mongoURI);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+/*app.set('view engine', 'ejs');*/
+app.engine('html', require('ejs').renderFile); app.set('view engine', 'html');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
