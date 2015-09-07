@@ -1,7 +1,7 @@
 var express = require('express');
-var router = express.Router();
+var router  = express.Router();
 
-var passport = require('passport');
+var passport       = require('passport');
 var methodOverride = require('method-override');
 
 var User = require('../models/User');
@@ -9,9 +9,9 @@ var User = require('../models/User');
 
 // require controllers 
 var SessionsController = require('../controllers/Sessions');
-var UsersController   = require('../controllers/Users');
-var PhotosController = require('../controllers/Photos');
-var workoutsController = require("../controllers/workout");
+var UsersController    = require('../controllers/Users');
+var PhotosController   = require('../controllers/Photos');
+var WorkoutsController = require('../controllers/Workouts');
 
 
 /* Adding a root route */
@@ -90,6 +90,15 @@ router.get('/users/:id',        isLoggedIn, UsersController.userShow);
 router.get('/users/:id/edit',   isLoggedIn, UsersController.userEdit);
 router.put('/users/:id',        isLoggedIn, UsersController.userUpdate);
 router.delete('/users/:id',     isLoggedIn, UsersController.userDelete);
+
+/* workouts controllers */
+router.get('/workouts',     isLoggedIn, WorkoutsController.WorkoutsIndex);
+router.get('/workouts/new', isLoggedIn, WorkoutsController.WorkoutsNew);
+router.post('/workouts',    isLoggedIn)
+router.post(   '/workouts',    isLoggedIn,  WorkoutsController.create);
+router.get(    '/workouts/:id', isLoggedIn, WorkoutsController.show);
+router.delete( '/workouts/:id', isLoggedIn,WorkoutsController.destroy);
+
 
 module.exports = router;
 

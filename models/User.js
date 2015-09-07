@@ -1,4 +1,5 @@
-var mongoose = require('mongoose'); 
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;  
 var passportLocalMongoose = require('passport-local-mongoose');
 
 /* require photo model */
@@ -16,7 +17,11 @@ var User = new mongoose.Schema({
   photos: [{
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'Photo'
-  }]  
+    }], 
+  workouts: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Workout'
+  }]
 
 });
 

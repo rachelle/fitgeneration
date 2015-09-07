@@ -6,14 +6,14 @@ var User = require('./User');
 
 /* Define Photo Schema */
 var Photo = new mongoose.Schema({
-  image: String, 
-  caption: String, 
-  date_taken: Date,  
-  comment: String,
-  user: {
-    type: mongoose.Schema.Types.ObjectId, 
-    ref: 'User'
-  }
+    image:      String, 
+    caption:    String, 
+    date_taken: Date,  
+    comment:    String,
+    user: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'User'
+    }
 }); 
 
 /* export schema */

@@ -16,44 +16,42 @@ var User    = require('../models/User');
 var usersIndex = function(req, res, next){
   User.find(function(err, users) {
     if (err) res.json({ message: 'Could not find any users'}); 
-    res.render('./users', {
-      title: "Here all the users", 
-      users: users,
-      user: req.user
-    
+      res.render('./users', {
+        title: "Here all the users", 
+        users: users,
+        user: req.user
+      });
   });
-});
 };
 
-  
-    //||||||||||||||||||||||||||--
-// NEW USER
-//||||||||||||||||||||||||||--
+/* renders a new user */
 function usersNew  (req, res) {
   res.render('auth/register');
 };
 
-
+/* creates a new user */
 function usersCreate (req, res) {
   User.register(new User({
     username: req.body.username,
     name: req.body.name,
     weight: req.body.weight, 
     status: req.body.status
- }), req.body.password, function(err, user) {
+  }), req.body.password, function(err, user) {
     // if (err) { console.log(err); return res.render('auth/register', {user: user}); }
     if (err) return res.render('auth/register', {user: user});
-    passport.authenticate('local')(req, res, function () {
+      passport.authenticate('local')(req, res, function () {
       req.session.save(function (err) {
         if (err) {
           return next(err);
         }
+        
         res.redirect('/users/' + req.user.id); //+ id here?
       });
     });
   });
 };
 
+/* render users profile */
 var userShow = function(req, res, next){
   var id = req.params.id;
 
@@ -66,7 +64,7 @@ var userShow = function(req, res, next){
   });
 };
 
-
+/* user is able to edit their profile */
 var userEdit = function(req, res, next){
   var id = req.params.id;
 
@@ -79,7 +77,7 @@ var userEdit = function(req, res, next){
   });
 };
 
-
+/* user can update their profile */
 var userUpdate = function(req, res, next) {
   var id = req.params.id;
 
@@ -97,26 +95,25 @@ var userUpdate = function(req, res, next) {
   });
 };
 
- var userDelete = function(req,res){
+/* user has the option to delete their account */
+var userDelete = function(req,res){
   var id = req.params.id;
 
   User.findByAndRemove({_id: id}, function(error){
     if (error) res.send(error);
     res.redirect('/')
   });
- };
-
-
-module.exports = {
-
-    usersIndex:    usersIndex,
-    usersNew:      usersNew,
-    usersCreate:   usersCreate,
-    userShow:      userShow,
-    userEdit:      userEdit,
-    userUpdate:    userUpdate,
-    userDelete:    userDelete
-
 };
 
+/* exports user module */
+module.exports = {
 
+  usersIndex:    usersIndex,
+  usersNew:      usersNew,
+  usersCreate:   usersCreate,
+  userShow:      userShow,
+  userEdit:      userEdit,
+  userUpdate:    userUpdate,
+  userDelete:    userDelete
+
+};

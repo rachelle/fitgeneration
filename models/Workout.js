@@ -1,19 +1,23 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema; 
 
-var workoutSchema = new mongoose.Schema({
-  title:  String,
-  bodypart: String
+/*  source in require model */
+var User = require('./User');
+
+/* Define Workout Schema */
+var Workout = new mongoose.Schema({
+    name:     String, 
+    reps:     Number,
+    sets:     Number, 
+    weight:   String, 
+    content:  String,
+    date:     Date, 
+    bodypart: String,
+    user: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'User'
+    }
 });
 
-var jsonFormatter = function (document, returnedObject, options) {
-  returnedObject.id = returnedObject._id
-  delete returnedObject._id;
-  delete returnedObject.__v;
-  return returnedObject;
-};
-
-workoutSchema.options.toJSON = {
-  transform: jsonFormatter
-};
-
-module.exports = mongoose.model('Workout', workoutSchema);
+/* export workout schema */
+module.exports = mongoose.model('Workout', Workout);

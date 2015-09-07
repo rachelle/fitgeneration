@@ -1,7 +1,7 @@
 var express = require('express'); 
 var mongoose = require('mongoose'); 
 
-/* sources in required models */
+/* source in required models */
 var Photo = require('../models/Photo'); 
 var User = require('../models/User'); 
 
@@ -77,12 +77,12 @@ module.exports.renderPhotosUpdate = function(req, res, next) {
 module.exports.renderPhotosShow = function(req, res, next) {
   var id = req.params.id; 
 
-  Photo.findById({_id:id}, function(error, photo){
+  Photo.findById({_id:id}, function (error, photo){
     if(error) res.send(error); 
     res.render(
       './photos/show', {
-       photo: photo, 
-       user: req.user
+        photo: photo, 
+        user: req.user
       });
   }); 
 };
@@ -91,7 +91,7 @@ module.exports.deletePhoto = function(req, res){
   var id = req.params.id; 
   var photo_id = req.params.id; 
 
-  Photo.findByIdAndRemove({_id: id}, function(error){
+  Photo.findByIdAndRemove({_id:id}, function (error){
     if (error) res.send(error);
       res.redirect('/photos')
     }); 
