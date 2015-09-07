@@ -5,10 +5,24 @@ var mongoose = require('mongoose');
 var Photo = require('../models/Photo'); 
 var User = require('../models/User'); 
 
-/* gets all progress photos from user */
+var router = express.Router();
+
+/* gets all users photos */
+module.exports.renderPhotosIndex = function(req, res, next){
+  Photo.find(function(err, photos){
+    if (err) res.send('> ' + err);
+      res.render('./photos', 
+      {
+        photos: photos, 
+        user: req.user
+      });
+  });
+};
+
+/* renders a new user photo */
 module.exports.renderPhotosNew = function(req, res){
   var photos = Photo.all 
-  res.render('./photos/new', {user: req.user, photos: photos});
+    res.render('./photos/new', {user: req.user, photos:photos});
 };
 
 module.exports.renderPhotosCreate = function(req, res, next){
@@ -29,10 +43,10 @@ module.exports.renderPhotosCreate = function(req, res, next){
 };
 
 module.exports.renderPhotosEdit = function(req, res, next){
-  var id       = req.params.id; 
+  var id = req.params.id; 
   var photo_id = req.params.id; 
 
-  Photo.findById({_id: id}, function(error, photo){
+  Photo.findById({_id:id}, function(error, photo){
     console.log('photo', photo); 
     if(error) res.send(error); 
       res.render(
@@ -46,7 +60,7 @@ module.exports.renderPhotosEdit = function(req, res, next){
 module.exports.renderPhotosUpdate = function(req, res, next) {
   var id = req.params.id; 
 
-  Photo.findById({_id: id}, function(error, photo) {
+  Photo.findById({_id:id}, function(error, photo){
     if(error) res.send(error); 
       if (req.body.image) photo.image = req.body.image; 
       if (req.body.caption) photo.caption = req.body.caption; 
@@ -56,9 +70,22 @@ module.exports.renderPhotosUpdate = function(req, res, next) {
       photo.save(function(error) {
         if (error) res.send(error); 
           res.redirect('/photos/' + id);
-        });
       });
-  };
+  });
+};
+
+module.exports.renderPhotosShow = function(req, res, next) {
+  var id = req.params.id; 
+
+  Photo.findById({_id:id}, function(error, photo){
+    if(error) res.send(error); 
+    res.render(
+      './photos/show', {
+       photo: photo, 
+       user: req.user
+      });
+  }); 
+};
 
 module.exports.deletePhoto = function(req, res){
   var id = req.params.id; 

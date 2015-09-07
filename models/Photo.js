@@ -1,4 +1,5 @@
 var mongoose = require('mongoose'); 
+var Schema = mongoose.Schema;
 
 /* require user model */
 var User = require('./User');

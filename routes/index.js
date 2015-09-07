@@ -10,8 +10,9 @@ var User = require('../models/User');
 // require controllers 
 var SessionsController = require('../controllers/Sessions');
 var UsersController   = require('../controllers/Users');
-var workoutsController = require("../controllers/workout");
 var PhotosController = require('../controllers/Photos');
+var workoutsController = require("../controllers/workout");
+
 
 /* Adding a root route */
 router.get('/', function (req, res) {
@@ -72,6 +73,14 @@ router.post('/login', passport.authenticate(
   }),                  SessionsController.sessionsCreate);
 router.get('/logout',  SessionsController.sessionsDelete);
 
+/* renders photos controllers */
+router.get('/photos',          isLoggedIn, PhotosController.renderPhotosIndex);
+router.get('/photos/new',      isLoggedIn, PhotosController.renderPhotosNew); 
+router.post('/photos',         isLoggedIn, PhotosController.renderPhotosCreate);
+router.get('/photos/:id/edit', isLoggedIn, PhotosController.renderPhotosEdit);
+router.put('/photos/:id',      isLoggedIn, PhotosController.renderPhotosUpdate); 
+router.get('/photos/:id',      isLoggedIn, PhotosController.renderPhotosShow);
+router.delete('/photos/:id',   isLoggedIn, PhotosController.deletePhoto);
 
 /* users controllers */
 router.get('/auth/register',                UsersController.usersNew);
@@ -81,14 +90,7 @@ router.get('/users/:id',        isLoggedIn, UsersController.userShow);
 router.get('/users/:id/edit',   isLoggedIn, UsersController.userEdit);
 router.put('/users/:id',        isLoggedIn, UsersController.userUpdate);
 router.delete('/users/:id',     isLoggedIn, UsersController.userDelete);
+
 module.exports = router;
 
-/* renders photos controllers */
-router.get('/photos', isLoggedIn, PhotosController.renderPhotosIndex);
-router.get('/photos/new', isLoggedIn, PhotosControllers.renders.PhotosNew); 
-router.post('/photos/', isLoggedIn, PhotosControllers.renderPhotosCreate);
-router.get('/photos/:id/edit', isLoggedIn, PhotosControllers.rendersPhotosEdit);
-router.put('/photos/:id', isLoggedIn, PhotosControllers.rendersPhotosUpdate); 
-router.get('/photos/:id', isLoggedIn, PhotosControllers.rendersPhotosShow);
-router.delete('/photos/:id', isLoggedIn, PhotosControllers.deletePuppy);
 

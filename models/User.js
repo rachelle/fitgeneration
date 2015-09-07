@@ -1,6 +1,9 @@
 var mongoose = require('mongoose'); 
 var passportLocalMongoose = require('passport-local-mongoose');
 
+/* require photo model */
+var Photo = require('./Photo');
+
 var User = new mongoose.Schema({
   // the passport-local-mongoose module 
   // creates username and email for the User
@@ -9,7 +12,11 @@ var User = new mongoose.Schema({
   gym:      String, 
   photo:    String,
   goals:    String,
-  status:   String  
+  status:   String,
+  photos: [{
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Photo'
+  }]  
 
 });
 
