@@ -1,6 +1,18 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto:400,100,400italic,700italic,700");
+
 body {
   margin: 0 auto;
   padding: 0;
+  line-height: 1.6;
+  font-size: 1rem;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: "Roboto";
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .banner{
@@ -10,6 +22,18 @@ body {
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.container{
+  margin: 1rem auto;
+  max-width: 220px;
+  position: relative;
+}
+
+h1{
+  font-size: 3rem;
+  text-align: center;
+  text-shadow: 2px 2px;
 }
 
 .logoname {
@@ -113,5 +137,61 @@ a.navlinks {
 
 }
 
+
+.exercise-content {
+
+  background: white;
+  border: 0 none;
+  margin-top: 60px;
+  margin-left: 250px;
+  border-radius: 3px;
+  padding: 20px 20px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  width: 500px;
+  height: 500px;
+
+}
+
+#workout-form{
+  width: 400px;
+  margin: 0px auto;
+  text-align: center;
+  margin-top: 30px;
+
+}
+
+#workout-form input{
+  padding: 15px;
+  border: 2px solid #007D89;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  width: 100%;
+ 
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  font-size: 15px;
+}
+
+#workout-form .action-button:hover, 
+#workout-form .action-button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+
+.workout-title{
+  font-size: 25px;
+  color: #2C3E50;
+ 
+}
+
+.workout-banner{
+  background:url("/images/girl-squat.jpg");
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 

@@ -7,11 +7,9 @@ var User = require('./User');
 /* Define Workout Schema */
 var Workout = new mongoose.Schema({
     name:     String, 
-    reps:     Number,
-    sets:     Number, 
+    reps:     String,
+    sets:     String, 
     weight:   String, 
-    content:  String,
-    date:     Date, 
     bodypart: String,
     user: {
         type: mongoose.Schema.Types.ObjectId, 

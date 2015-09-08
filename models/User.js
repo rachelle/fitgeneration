@@ -14,14 +14,15 @@ var User = new mongoose.Schema({
   photo:    String,
   goals:    String,
   status:   String,
-  photos: [{
+
+  photo: [{
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'Photo'
-    }], 
-  workouts: [{
+    }]
+ /* workouts: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Workout'
-  }]
+  }]*/
 
 });
 

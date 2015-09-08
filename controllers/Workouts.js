@@ -32,8 +32,6 @@ module.exports.renderWorkoutsCreate = function(req, res, next){
       reps: req.body.reps, 
       sets: req.body.sets, 
       weight: req.body.weight, 
-      content: req.body.content, 
-      date: req.body.date,
       bodypart: req.body.bodypart, 
       user: req.user
     });

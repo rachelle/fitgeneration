@@ -29,8 +29,6 @@ module.exports.renderPhotosCreate = function(req, res, next){
   var Photo = new Photo({
     caption:    req.body.caption, 
     image:      req.body.image, 
-    date_taken: req.body.data_taken, 
-    comment:    req.body.comment, 
     user:       req.user
   });   
   console.log(req.body); 
@@ -38,7 +36,7 @@ module.exports.renderPhotosCreate = function(req, res, next){
     if(error){res.send('> ', + err);}
       req.user.photos.push(photo); 
       req.user.save(); 
-      res.redirect('/photos/' + photo.id)
+      res.redirect("./photos/" + photo.id);
   });
 };
 
