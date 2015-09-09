@@ -29,8 +29,11 @@ module.exports.renderExercisesNew = function(req, res){
 /* creates a workout plan */
 module.exports.renderExercisesCreate = function(req, res, next){
   var exercise = new Exercise({
-    description: req.body.description, 
-            user: req.user
+    description: req.body.description,
+    date: req.body.date, 
+    reps: req.body.reps, 
+    sets: req.body.sets, 
+    user: req.user
   }); 
   console.log(req.body); 
   exercise.save(function(error){

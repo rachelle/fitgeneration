@@ -1,0 +1,35 @@
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+body{
+  margin: 0 auto;
+}
+
+.logoname {
+  color: #FF3555;
+  font-size: 25px;
+  padding-left: 20px;
+}
+
+a.navlinks {
+  color: #FF3555;
+}
+
+.leg-exercises{
+  margin-top: 20px;
+}
+
+.legs{
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+span{
+  margin-top: 10px;
+}
+
+img{
+  margin-top: 10px;
+  width: 400px;
+  height:300px;
+}

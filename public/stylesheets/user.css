@@ -45,23 +45,16 @@ h1 {
     -webkit-animation: text-fade 1.5s;
 }
 
-/*h1{
-  background:#FF3555;
-  padding:20px 0;
-  font-size:140%;
-  font-weight:300;
-  text-align:center;
-  color:#fff;
-}*/
+
 
 .fb {
   list-style: none;
   color: white;
 }
 
-a:link{
+/*a:link{
   text-decoration: none;
-}
+}*/
 
 input { 
   width: 100%; 
@@ -71,7 +64,7 @@ input {
   outline: none;
   padding: 10px;
   font-size: 16px;
-  color: white;
+  color: #545454;
   text-shadow: 1px  rgba(0,0,0,0.3);
   border: 3px solid rgba(0,0,0,0.3);
   border-radius: 4px;
