@@ -27,9 +27,11 @@
 </nav>
 
 <div class="leg-exercises"> 
+  <h2>Squats</h2>
 <form action="/exercises" method="Post" id="list-form">
   <div class="container">
     <ul class="collapsible center-align" data-collapsible="expandable">
+
       <li><!-- Squats -->
         <div class="collapsible-header">Squats</div>
         <div class="collapsible-body">
@@ -48,6 +50,15 @@
         <label class="legs" for="squats">Squats</label>
       </div>
       </li>
+      <li>
+        <div class="collapsible-header">Sumo Squats</div>
+        <div class="collapsible-body">
+          <img src="/images/sumoooo.gif">
+          <br/>
+          <input type="checkbox" name="description" value="sumo squat" id="sumo squat"> 
+          <label class="legs" for="sumo squat">Sumo Squat</label>
+        </div>
+      </li>
       <li> <!-- Jump Squat -->
         <div class="collapsible-header">Jump Squats</div>
         <div class="collapsible-body">
@@ -58,9 +69,33 @@
         </div>
       </li>
       <li>
-        <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-        <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+        <div class="collapsible-header">Split Squats</div>
+        <div class="collapsible-body">
+          <img src="/images/split-squat.jpg">
+          <br/>
+          <input type="checkbox" name="description" value="squat" id="split squat"> 
+          <label class="legs" for="split squat">Split Squat</label>
+        </div>
       </li>
+      <li>
+        <div class="collapsible-header">Narrow Squats</div>
+        <div class="collapsible-body">
+          <img src="/images/narrow-squats.jpg">
+          <br/>
+          <input type="checkbox" name="description" value="narrow squats" id="narrow squats"> 
+          <label class="legs" for="narrow squats">Narrow Squats</label>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">Rear Deadlift</div>
+        <div class="collapsible-body">
+          <img src="/images/rdl.jpg">
+          <br/>
+          <input type="checkbox" name="description" id="rear deadlift" value="rear deadlift"> 
+          <label class="legs" for="rear deadlift">rear deadlift</label>
+        </div>
+      </li>
+
       <button type="submit" name="Submit" class="action-button" value="Submit">Submit</button>
     </ul>
   </div>
@@ -68,14 +103,7 @@
 
 
 
-     <!-- <li>
-      <div class="collapsible-header">Rear Deadlift</div>
-      <div class="collapsible-body">
-         <img src="/images/rdl.jpg">
-         <br/>
-        <input type="checkbox" name="description" id="rear deadlift" value="rear deadlift"> 
-        <label class="legs" for="rear deadlift">rear deadlift</label>
-      </div> -->
+     
     <!-- </li>
     <li>
       <div class="collapsible-header">Step Ups</div>
