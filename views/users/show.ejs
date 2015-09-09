@@ -15,45 +15,41 @@
 </head> 
 <body> 
 <nav>
-    <div class="nav-wrapper grey lighten-5">
-      <span class="logoname">Logo</span>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a class="navlinks" href="sass.html">workout</a></li>
-        <li><a href="/users" class="navlinks" href="badges.html">Search</a></li>
-        <li><a class="navlinks" href="collapsible.html">Signout</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="nav-wrapper grey lighten-5">
+    <span class="logoname">Logo</span>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a class="navlinks" href="sass.html">workout</a></li>
+      <li><a href="/users" class="navlinks" href="badges.html">Search</a></li>
+      <li><a class="navlinks" href="collapsible.html">Signout</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <!-- users banner  -->
-  <div class="col-lg-6 col-sm-6 center-align">
-    <div id="pagewrap">
-        <section id="profilecontainer">
-        <div id="profileWrap">
-          <img class="avatar center-align" src="http://i1234.photobucket.com/albums/ff409/Blu3Morpho/Hevnly/usrprofilepic.jpg" alt="user profile picture">
-         
-        <p class="userName">Cyral Haghn</p>
-
-          
-     
-      </section>
+<!-- users banner  -->
+<div class="col-lg-6 col-sm-6 center-align">
+  <div id="pagewrap">
+  <section id="profilecontainer">
+    <div id="profileWrap">
+      <img class="avatar center-align" src="http://i1234.photobucket.com/albums/ff409/Blu3Morpho/Hevnly/usrprofilepic.jpg" alt="user profile picture">
+      <p class="userName">Cyral Haghn</p>
+  </section>
       
-        <nav id="navBottom">
-        <ul id="navTxtBtm">
-          <li id="posts">
-            <a href="/users/<%=user.id %>/edit">edit profile</a>
-          </li>
-          <li id="followers">
-            <a href="/photos/new">Add photo</a>
-          </li>
-          <li id="workout">
-            <a href="/workouts/new">create workout</a> 
-          </li>
-             
-             
-           
-        </ul>
-      </nav>
+  <nav id="navBottom">
+    <ul id="navTxtBtm">
+      <li id="posts">
+        <a href="/users/<%=user.id %>/edit">edit profile</a>
+      </li>
+      <li id="followers">
+          <a href="/photos/new">Add photo</a>
+      </li>
+      <li id="workout">
+        <a href="/workouts/new">create workout</a> 
+      </li>
+      <li id="exercise"> 
+          <a class="exercise" href="/exercises/new">Add exercise</a> 
+      </li>
+    </ul>
+  </nav>
    
       
     <div class="workout-plan">

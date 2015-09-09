@@ -89,13 +89,13 @@ router.get('/workouts/:id',      isLoggedIn, WorkoutsController.renderWorkoutsSh
 router.delete('/workouts/:id',   isLoggedIn, WorkoutsController.deleteWorkout);
 
 /* exercises controller */
-router.get('./exercises',          isLoggedIn, ExercisesController.renderExercisesIndex);
-router.get('./exercises/new',      isLoggedIn, ExercisesController.renderExercisesNew);
-router.post('./exercises',         isLoggedIn, ExercisesController.renderExercisesCreate); 
-router.get('./exercises/:id/edit', isLoggedIn, ExercisesController.renderExercisesEdit);
-router.put('./exercises/:id',      isLoggedIn, ExercisesController.renderExercisesUpdate); 
-router.get('./exercises/id',       isLoggedIn, ExercisesController.renderExercisesShow);
-router.delete('./exercises/:id',   isLoggedIn, ExercisesController.deleteExercise);
+router.get('/exercises',          isLoggedIn, ExercisesController.renderExercisesIndex);
+router.get('/exercises/new',      isLoggedIn, ExercisesController.renderExercisesNew);
+router.post('/exercises',         isLoggedIn, ExercisesController.renderExercisesCreate); 
+router.get('/exercises/:id/edit', isLoggedIn, ExercisesController.renderExercisesEdit);
+router.put('/exercises/:id',      isLoggedIn, ExercisesController.renderExercisesUpdate); 
+router.get('/exercises/:id',       isLoggedIn, ExercisesController.renderExercisesShow);
+router.delete('/exercises/:id',   isLoggedIn, ExercisesController.deleteExercise);
 
 
 /* users controller */

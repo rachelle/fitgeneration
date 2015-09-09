@@ -1,23 +1,23 @@
-var mongoose = require('mongoose');
 var express  = require('express');
+var mongoose = require('mongoose');
+
 
 /* source in models */
 var Exercise = require('../models/Exercise'); 
 var User     = require('../models/User'); 
-var Workout  = require('../models/Workout'); 
 
 var router   = express.Router(); 
 
 /* gets all exercises */
 module.exports.renderExercisesIndex = function(req, res, next){
-  Exercise.find(function (err, photos){
+  Exercise.find(function (err, exercises){
     if (err) res.send('> ' + err); 
       res.render('./exercises',
       {
         exercises: exercises, 
         user: req.user
       }); 
-    }); 
+  }); 
 };
 
 /* renders a new exercise plan */
