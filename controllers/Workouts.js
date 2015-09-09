@@ -27,7 +27,7 @@ module.exports.renderWorkoutsNew = function(req, res){
 
 /* create a workout plan */
 module.exports.renderWorkoutsCreate = function(req, res, next){
-    var Workout = new Workout({
+    var workout = new Workout({
       name: req.body.name,
       reps: req.body.reps, 
       sets: req.body.sets, 

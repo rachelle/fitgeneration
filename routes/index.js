@@ -7,11 +7,11 @@ var methodOverride = require('method-override');
 var User = require('../models/User');
 
 // require controllers 
-var SessionsController = require('../controllers/Sessions');
-var PhotosController   = require('../controllers/Photos');
-var WorkoutsController = require('../controllers/Workouts');
-var UsersController    = require('../controllers/Users');
-
+var SessionsController  = require('../controllers/Sessions');
+var PhotosController    = require('../controllers/Photos');
+var WorkoutsController  = require('../controllers/Workouts');
+var UsersController     = require('../controllers/Users');
+var ExercisesController = require('../controllers/Exercises');
 /* Adding a root route */
 router.get('/', function (req, res) {
   res.render('index', {user: req.user});
@@ -70,7 +70,7 @@ router.post('/login', passport.authenticate(
     }),                SessionsController.sessionsCreate);
 router.get('/logout',  SessionsController.sessionsDelete);
 
-/* renders photos controllers */
+/* renders photos controller */
 router.get('/photos',          isLoggedIn, PhotosController.renderPhotosIndex);
 router.get('/photos/new',      isLoggedIn, PhotosController.renderPhotosNew); 
 router.post('/photos',         isLoggedIn, PhotosController.renderPhotosCreate);
@@ -79,7 +79,7 @@ router.put('/photos/:id',      isLoggedIn, PhotosController.renderPhotosUpdate);
 router.get('/photos/:id',      isLoggedIn, PhotosController.renderPhotosShow);
 router.delete('/photos/:id',   isLoggedIn, PhotosController.deletePhoto);
 
-/* workouts controllers */
+/* workouts controller */
 router.get('/workouts',          isLoggedIn, WorkoutsController.renderWorkoutsIndex);
 router.get('/workouts/new',      isLoggedIn, WorkoutsController.renderWorkoutsNew);
 router.post('/workouts',         isLoggedIn, WorkoutsController.renderWorkoutsCreate);
@@ -88,8 +88,17 @@ router.put('/workouts/:id',      isLoggedIn, WorkoutsController.renderWorkoutsUp
 router.get('/workouts/:id',      isLoggedIn, WorkoutsController.renderWorkoutsShow);
 router.delete('/workouts/:id',   isLoggedIn, WorkoutsController.deleteWorkout);
 
+/* exercises controller */
+router.get('./exercises',          isLoggedIn, ExercisesController.renderExercisesIndex);
+router.get('./exercises/new',      isLoggedIn, ExercisesController.renderExercisesNew);
+router.post('./exercises',         isLoggedIn, ExercisesController.renderExercisesCreate); 
+router.get('./exercises/:id/edit', isLoggedIn, ExercisesController.renderExercisesEdit);
+router.put('./exercises/:id',      isLoggedIn, ExercisesController.renderExercisesUpdate); 
+router.get('./exercises/id',       isLoggedIn, ExercisesController.renderExercisesShow);
+router.delete('./exercises/:id',   isLoggedIn, ExercisesController.deleteExercise);
 
-/* users controllers */
+
+/* users controller */
 router.get('/auth/register',              UsersController.usersNew);
 router.post('/auth/register',             UsersController.usersCreate);
 router.get('/users',          isLoggedIn, UsersController.usersIndex);

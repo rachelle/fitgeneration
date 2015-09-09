@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var User = require('./User');
 
 /* Define Photo Schema */
-var PhotoSchema = new mongoose.Schema({
+var Photo = new mongoose.Schema({
     image:      String, 
     caption:    String, 
     user: {
@@ -15,4 +15,4 @@ var PhotoSchema = new mongoose.Schema({
 }); 
 
 /* export schema */
-module.exports = mongoose.model ('Photo', PhotoSchema);
+module.exports = mongoose.model ('Photo', Photo);

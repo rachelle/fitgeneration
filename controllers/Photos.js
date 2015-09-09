@@ -26,7 +26,7 @@ module.exports.renderPhotosNew = function(req, res){
 };
 
 module.exports.renderPhotosCreate = function(req, res, next){
-  var Photo = new Photo({
+  var photo = new Photo({
     caption:    req.body.caption, 
     image:      req.body.image, 
     user:       req.user
@@ -48,12 +48,12 @@ module.exports.renderPhotosEdit = function(req, res, next){
     console.log('photo', photo); 
     if(error) res.send(error); 
       res.render(
-        './photos/edit', {
+       './photos/edit', {
           photo: photo, 
           user: req.user
-        });
-      })
-    };
+      });
+  })
+};
 
 module.exports.renderPhotosUpdate = function(req, res, next){
   var id = req.params.id; 
