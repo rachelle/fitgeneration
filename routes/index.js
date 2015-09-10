@@ -100,6 +100,11 @@ router.put('/exercises/:id',      isLoggedIn, ExercisesController.renderExercise
 router.get('/exercises/:id',       isLoggedIn, ExercisesController.renderExercisesShow);
 router.delete('/exercises/:id',   isLoggedIn, ExercisesController.deleteExercise);
 
+/* plans controller */
+router.get('/plans/new',    isLoggedIn, PlansController.renderPlanNew); 
+router.post('/plans',       isLoggedIn, PlansController.renderPlansCreate);
+router.get('/plans/:id',    isLoggedIn, PlansController.renderPlansShow);
+router.delete('/plans/:id', isLoggedin, PlansController.deletePlan);
 
 /* users controller */
 router.get('/auth/register',              UsersController.usersNew);
@@ -109,7 +114,5 @@ router.get('/users/:id',      isLoggedIn, UsersController.userShow);
 router.get('/users/:id/edit', isLoggedIn, UsersController.userEdit);
 router.put('/users/:id',      isLoggedIn, UsersController.userUpdate);
 router.delete('/users/:id',   isLoggedIn, UsersController.userDelete);
-
-
 
 module.exports = router;
