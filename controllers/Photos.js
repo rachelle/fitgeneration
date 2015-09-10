@@ -96,5 +96,5 @@ module.exports.deletePhoto = function(req, res){
   Photo.findByIdAndRemove({_id:id}, function (error){
     if (error) res.send(error);
       res.redirect('/photos')
-    }); 
- };
+  }); 
+};
