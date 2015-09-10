@@ -6,14 +6,10 @@ body {
   background-size: cover;
 }
 
-
-
 .logoname {
-  color: #FF3555;
   font-size: 25px;
   padding-left: 20px;
 }
-
 
 h1 {
     text-align: center;
@@ -44,7 +40,7 @@ h1 {
     -webkit-animation: text-fade 2.5s;
 }
 
-/*.overlay{
+.overlay{
   position: absolute;
   top:0;
   left:0;
@@ -54,7 +50,7 @@ h1 {
   z-index:0;
   background-color: rgba(0, 0, 0,0.6);
 }
-*/
+
 /* Log in styles */
 #login{
   width: 400px;
@@ -91,8 +87,8 @@ h1 {
   padding: 20px 20px;
   width: 500px;
   height: 500px;
-  margin-top:20px;
-  margin-left: 240px;
+  margin-top:50px;
+  margin-left: 250px;
 
 }
 
@@ -102,13 +98,13 @@ h1 {
 }
 
 input{
-
   background:white;
   background: transparent;
   margin-bottom:4%;
   border:1px solid black;
   border: 1px solid black;
   padding:4%;
+  width: 300px;
   font-family:'Open Sans', sans-serif;
 }
 
@@ -136,8 +132,8 @@ input[type="text"], {
   font-family:'Open Sans',sans-serif;
   font-size:95%;
   color: #fff;
-}
 
+}
 
 input[type="submit"]{
   width: 200px;
@@ -149,7 +145,7 @@ input[type="submit"]{
   padding:4%;
   font-size: 16px;
   color: white;
-  margin-left: 140px;
+  margin-left: 70px;
   text-align: center;
   cursor: pointer;
   margin-top: 10px;
@@ -170,10 +166,6 @@ input[type="submit"]:hover{
   margin-left: 10px;
 }
 
-a.nav{
-  color: white;
-}
-
 .social-btn{
  margin-top: 10px;
  width: 100px;
@@ -181,4 +173,6 @@ a.nav{
  font-size: 14px;
  background-color: #415E9B;
 }
+
+
 
