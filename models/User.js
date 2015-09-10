@@ -6,6 +6,7 @@ var passportLocalMongoose = require('passport-local-mongoose');
 var Photo = require('./Photo');
 var Exercise = require('./Exercise');
 var Workout = require('./Workout');
+var Message = require('./Message');
 
 var User = new mongoose.Schema({
   // the passport-local-mongoose module 
@@ -13,7 +14,9 @@ var User = new mongoose.Schema({
   name:     String,
   weight:   Number,
   gym:      String, 
-  photo:    String,
+  url:      String,
+  avatar:   String,
+  image:    String,
   goals:    String,
   status:   String,
 
@@ -28,6 +31,10 @@ var User = new mongoose.Schema({
   exercises: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Exercise'
+  }],
+  messages: [{
+      type: mongoose.Schema.Types.ObjectId, 
+      ref: 'Messages'
   }]
 
 });

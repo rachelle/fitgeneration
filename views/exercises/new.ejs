@@ -3,7 +3,7 @@
 <head> 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
  
-  <title>her era</title> 
+  <title>era</title> 
   <link rel="stylesheet" type="text/css" href="/../../stylesheets/exercise.css">
    <script src="jquery.js"></script>
  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,23 +11,27 @@
   <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
    
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head> 
 <body> 
 
 <nav>
   <div class="nav-wrapper grey lighten-5">
-    <span class="logoname">Logo</span>
+    <span class="logoname">era</span>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a class="navlinks" href="sass.html">workout</a></li>
       <li><a href="/users" class="navlinks" href="badges.html">Search</a></li>
-      <li><a class="navlinks" href="collapsible.html">Signout</a></li>
+      <li><a class="navlinks" href="/logout">Signout</a></li>
     </ul>
   </div>
 </nav>
 
+<div class="legs">
+
+</div>
+
 <div class="leg-exercises"> 
-  <h2>Squats</h2>
+  <h2 class="center-align">Leg Day</h2>
 <form action="/exercises" method="Post" id="list-form">
   <div class="container">
     <ul class="collapsible center-align" data-collapsible="expandable">
@@ -35,7 +39,7 @@
       <li><!-- Squats -->
         <div class="collapsible-header">Squats</div>
         <div class="collapsible-body">
-          <img src="/images/selter.gif">
+          <img class="materialiboxed" src="/images/selter.gif">
           <br/>
           Here's some useful tips!<br/>
           1. Take a deep breath, and go descend like you are sitting back on a chair behind you; not going straight down. Keep your knees in line with your feet. 
@@ -51,18 +55,18 @@
       </div>
       </li>
       <li>
-        <div class="collapsible-header">Sumo Squats</div>
+        <div class="collapsible-header">Pile Squats</div>
         <div class="collapsible-body">
-          <img src="/images/sumoooo.gif">
+          <img class="materialboxed" src="/images/sumoooo.gif">
           <br/>
-          <input type="checkbox" name="description" value="sumo squat" id="sumo squat"> 
-          <label class="legs" for="sumo squat">Sumo Squat</label>
+          <input type="checkbox" name="description" value="pile squat" id="pile squat"> 
+          <label class="legs" for="pile squat">Pile Squats</label>
         </div>
       </li>
       <li> <!-- Jump Squat -->
         <div class="collapsible-header">Jump Squats</div>
         <div class="collapsible-body">
-          <img src="/images/jump-squat.jpg">
+          <img class="materialboxed" src="/images/jump-squat.jpg">
           <br/>
           <input type="checkbox" name="description" value="jump squat" id="jump-squat"> 
           <label class="legs" for="jump squat">Jump Squat</label>
@@ -71,7 +75,7 @@
       <li>
         <div class="collapsible-header">Split Squats</div>
         <div class="collapsible-body">
-          <img src="/images/split-squat.jpg">
+          <img class="materialboxed" src="/images/split-squat.jpg">
           <br/>
           <input type="checkbox" name="description" value="squat" id="split squat"> 
           <label class="legs" for="split squat">Split Squat</label>
@@ -80,7 +84,7 @@
       <li>
         <div class="collapsible-header">Narrow Squats</div>
         <div class="collapsible-body">
-          <img src="/images/narrow-squats.jpg">
+          <img class="materialboxed" src="/images/narrow-squats.jpg">
           <br/>
           <input type="checkbox" name="description" value="narrow squats" id="narrow squats"> 
           <label class="legs" for="narrow squats">Narrow Squats</label>
@@ -89,12 +93,59 @@
       <li>
         <div class="collapsible-header">Rear Deadlift</div>
         <div class="collapsible-body">
-          <img src="/images/rdl.jpg">
+          <img class="materialboxed" src="/images/rdl.jpg">
           <br/>
           <input type="checkbox" name="description" id="rear deadlift" value="rear deadlift"> 
           <label class="legs" for="rear deadlift">rear deadlift</label>
         </div>
       </li>
+      <li>
+        <div class="collapsible-header">Dumbell Squats</div>
+        <div class="collapsible-body">
+          <img class="materialboxed" src="/images/dumbell-squat.jpg">
+          <br/>
+          <input type="checkbox" name="description" value="dumbell squat" id="dumbell squat"> 
+          <label class="legs" for="dumbell squat">Split Squat</label>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">Lunges</div>
+        <div class="collapsible-body">
+        <img class="materialboxed" src="/images/lunges.jpg">
+          <br/>
+          <input type="checkbox" name="description" value="lunges" id="lunges"> 
+          <label class="legs" for="lunges">lunges</label>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">Curtsey Lunges</div>
+        <div class="collapsible-body">
+        <img class="materialboxed" src="/images/curt.jpg">
+          <br/>
+          <input type="checkbox" name="description" value="curtsey lunges" id="curtsey lunges"> 
+          <label class="legs" for="curtsey lunges">curtsey lunges</label>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">barbell bridges</div>
+        <div class="collapsible-body">
+        <img class="materialboxed" src="/images/chair-barbell.jpg">
+          <br/>
+          <input type="checkbox" name="description" value="barbell bridges" id="barbell bridges"> 
+          <label class="legs" for="barbell bridges">curtsey lunges</label>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">one legged deadlift</div>
+        <div class="collapsible-body">
+        <img class="materialboxed" src="/images/leg.jpg">
+          <br/>
+          <input type="checkbox" name="description" value="one legged deadlift" id="one legged deadlift"> 
+          <label class="legs" for="one legged deadlift">one legged deadlift</label>
+        </div>
+      </li>
+
+
 
       <button type="submit" name="Submit" class="action-button" value="Submit">Submit</button>
     </ul>
@@ -102,76 +153,49 @@
 </form>
 
 
-
-     
-    <!-- </li>
-    <li>
-      <div class="collapsible-header">Step Ups</div>
-      <div class="collapsible-body">
-        <img src="/images/step-ups.jpg">
-        <br/>
-           <input name="description" type="checkbox" value="step ups" id="step ups" />
-        <label class="legs" for="side-lunges">Step Ups</label>
-
-      </div>
-    </li> -->
-  <!-- <li>
-    <div class="collapsible-header">Barbell bridges</div>
-      <div class="collapsible-body"> <img src="/images/bridges.jpg">
-        <br/>
-        <input type="checkbox" name="description" value="barbell bridges" id="barbell bridges"> 
-        <label class="legs" for="barbell bridges">Barbell Bridges</label>
-      </div>
-    </li>
-    
-    
- -->
-
-
-
-<h2> Lunges </h2> 
-
-<li>
-      <div class="collapsible-header">Lunges </div>
-      <div class="collapsible-body"> 
-        <img src="/images/lunges.jpg">
-        <br/>
-        <span>
-          <h5>Step 1:</h5> Keep your upper body straight, with your shoulders back and relaxed and chin up (pick a point to stare at in front of you so you don't keep looking down). Always engage your core.</span><br/><br/>
-        <span><h5>Step 2:</h5> Step forward with one leg, lowering your hips until both knees are bent at about a 90-degree angle. Make sure your front knee is directly above your ankle, not pushed out too far, and make sure your other knee doesn't touch the floor. Keep the weight in your heels as you push back up to the starting position.</span><br/>
-
-         <input name="description" type="checkbox" value="lunges" id="lunges" />
-        <label class="legs" for="lunges">Lunges</label>
-      </div>
-    </li>
- 
-<li>
-      <div class="collapsible-header">Curtsey Lunges</div>
-      <div class="collapsible-body"> 
-        <img src="/images/curtsey.jpg">
-        <br/>
-        <input type="checkbox" name="description" value="curtsey-lunges" id="curtsey-lunges"> 
-        <label class="legs" for="curtsey lunges">Curtsey Lunges</label>
-      </div>
-    </li>
-
-
-
-<button type="submit" name="Submit" class="action-button" value="Submit">Submit</button>
-
-  </ul>
-
- </form>
-</div>      
   
 
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
-<script type="text/javascript" src="../javascripts/exercise.js"></script>
 
+      
+      
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js">
+</script>
+<script type="text/javascript" src="../javascripts/exercise.js"></script>
  
+  <footer class="page-footer grey darken-2">
+    <div class="container">
+      <div class="row sticky">
+        <div class="col l6 s12">
+          <h5 class="white-text">Footer Content</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2014 Copyright Text
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
 
 
 

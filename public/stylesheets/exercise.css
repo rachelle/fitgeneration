@@ -4,6 +4,9 @@ body{
   margin: 0 auto;
 }
 
+
+
+
 .logoname {
   color: #FF3555;
   font-size: 25px;
@@ -16,6 +19,8 @@ a.navlinks {
 
 .leg-exercises{
   margin-top: 20px;
+  position: relative;
+  margin-bottom: 50px;
 }
 
 .legs{

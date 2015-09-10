@@ -10,13 +10,17 @@ html {margin: 0;
     -webkit-text-size-adjust: 100%; /* 2 */
 }
 
-
+.logoname {
+  margin-left: 30px;
+}
 
 body {
   margin: 0;
 }
 
-
+a{
+  color: white;
+}
 
 article,
 footer,
@@ -158,6 +162,10 @@ body {
     font-size: 1.563rem;
 }
 
+h2{
+  color: #007D89;
+  margin-bottom: 20px;
+}
 button {
     width: 9.688rem;
     background-color: #f15a29;
@@ -178,7 +186,7 @@ button:hover {
 }
 
 
-  .introduction .buttons {
+.introduction .buttons {
     color: white;
     text-align: center;
     margin-top: 1.563rem;
@@ -221,4 +229,3 @@ button:hover {
 .cases .devices p {
     font-weight: 300;
     font-size: 1.313rem;
-

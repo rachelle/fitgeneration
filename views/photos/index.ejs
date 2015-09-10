@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ 
+  <title>her era</title> 
+  <link rel="stylesheet" type="text/css" href="css/ig.css">
+   <script src="jquery.js"></script>
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+  <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head> 
+<body> 
+
+
+<div class="col s12">
+          <% photos.forEach(function(photo) { %>
+          <div class="card">
+            <div class="card-image">
+               <img class="activator" style="width:400px; height:400px" src="<%= photo.image%>" alt="">
+              <span class="card-title"><%= photo.caption%></span>
+            </div>
+            <div class="card-content">
+              
+          </div>
+                <h5><a href="puppies/<%= photo.id %>"><%= photo.caption %></a></h5>
+           
+            </div>
+            
+          </div>
+        <% }); %>
+      </div>
+
+</body>
+</html>

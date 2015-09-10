@@ -21,11 +21,12 @@
     <div class="tagline">Thanks for visiting — Enter your details and we'll notify you on launch day!</div>
     <!--Log in Form-->
       <div id="login">
-      <form action="register" method="POST">
+      <form action="/auth/register" method="POST">
         <input type="text" placeholder="email" name="email" />
+        <input name="avatar" placeholder="profile url" class="file" type="text"/>
         <input type="text" placeholder="username" name="username"/>
         <input type="text" placeholder="password" name="password"/>
-        <input type="submit" value="Register" >
+        <input class="reg" type="submit" value="Register" >
         
 
       </form>

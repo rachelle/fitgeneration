@@ -19,8 +19,9 @@
     <span class="logoname">Logo</span>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a class="navlinks" href="sass.html">workout</a></li>
-      <li><a href="/users" class="navlinks" href="badges.html">Search</a></li>
-      <li><a class="navlinks" href="collapsible.html">Signout</a></li>
+   
+      <li><a class="navlinks" href="/users">users</a></li>
+      <li><a class="navlinks" href="/logout">Signout</a></li>
     </ul>
   </div>
 </nav>
@@ -29,9 +30,14 @@
   <div id="pagewrap">
   <section id="profilecontainer">
     <div id="profileWrap">
-      <img class="avatar center-align" src="http://i1234.photobucket.com/albums/ff409/Blu3Morpho/Hevnly/usrprofilepic.jpg" alt="user profile picture">
-      <p class="userName">Cyral Haghn</p>
+
+ <img class="avatar" src="<%= user.avatar %>" alt="">
+
+      
+   <p class="userName"><%= user.username %></p>
   </section>
+
+
 
       
   <nav id="navBottom">
@@ -50,6 +56,8 @@
       </li>
     </ul>
   </nav>
+
+
   <!-- users personal log -->
   <div class="workout-plan">
     <h3>Workout plan</h3> 

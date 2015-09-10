@@ -27,19 +27,21 @@ module.exports.renderPhotosNew = function(req, res){
 
 module.exports.renderPhotosCreate = function(req, res, next){
   var photo = new Photo({
-    caption:    req.body.caption, 
+    caption:    req.body.caption,
     image:      req.body.image, 
-    user:       req.user
+    url:        req.body.url, 
+    user_id:       req.user.id
   });   
   console.log(req.body); 
   photo.save(function(error){
     if(error){res.send('> ', + err);}
-      req.user.photos.push(photo); 
-      req.user.save(); 
-      res.redirect("./photos/" + photo.id);
+      // req.user.photos.push(photo); 
+      // req.user.save(); 
+      res.redirect("/photos/" + photo.id);
   });
 };
 
+/* edit photo */
 module.exports.renderPhotosEdit = function(req, res, next){
   var id = req.params.id; 
   var photo_id = req.params.id; 
@@ -60,6 +62,7 @@ module.exports.renderPhotosUpdate = function(req, res, next){
 
   Photo.findById({_id:id}, function(error, photo){
     if(error) res.send(error); 
+      if (req.body.url)     photo.url = req.body.url;
       if (req.body.image) photo.image = req.body.image; 
       if (req.body.caption) photo.caption = req.body.caption; 
       if (req.body.date_taken) photo.data_taken = req.body.date_taken; 
@@ -75,7 +78,8 @@ module.exports.renderPhotosUpdate = function(req, res, next){
 module.exports.renderPhotosShow = function(req, res, next) {
   var id = req.params.id; 
 
-  Photo.findById({_id:id}, function (error, photo){
+  Photo.findById({_id: id}, function (error, photo){
+    console.log('photo', photo);
     if(error) res.send(error); 
       res.render(
       './photos/show', {

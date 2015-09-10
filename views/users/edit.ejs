@@ -19,8 +19,8 @@
       <span class="logoname">Logo</span>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a class="navlinks" href="sass.html">workout</a></li>
-        <li><a class="navlinks" href="badges.html">Search</a></li>
-        <li><a class="navlinks" href="collapsible.html">Signout</a></li>
+        <li><a class="navlinks" href="/users">Home</a></li>
+        <li><a class="navlinks" href="/logout">Signout</a></li>
       </ul>
     </div>
   </nav>
@@ -28,52 +28,29 @@
   <!-- edit form   -->
   <div class="container">
       <div id="edit center-align">
-        <h3>edit profile</h3>
-      <form action="" method="POST">
-        <input class="change" type="text"  placeholder="name" name="name"/>
+        
+      <form  class="edit-form" action="" method="POST">
+        <h3 class="user-edit">edit profile</h3>
         <input type="text" placeholder="email" name="email" />
         <input type="text" placeholder="username" name="username"/>
         <input type="text" placeholder="weight" name="weight"/>
         <input type="text" placeholder="height" name="height"/>
-        <input type="submit" value="save changes" >
+        <label>Select</label>
+        <select class="browser-default">
+          <option value="status" disabled selected>fitness status</option>
+          <option value="1">bulking</option>
+          <option value="2">maintaing</option>
+          <option value="2">toning</option>
+          <option value="2">muscle gaining</option>
+          <option value="3">shredding</option>
+        </select>
+            
+        <input class="edit-btn" type="submit" value="save changes" >
       </form>
      </div>
     </div>
 
     </div>
 
-  
-
-
-<footer class="page-footer grey darken-2">
-          <div class="container">
-            <div class="row sticky">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="footer-copyright">
-            <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-          </div>
-        </footer>
-
-
-
-
-</body>
+  </body>
 </html>

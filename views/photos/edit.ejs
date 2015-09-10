@@ -1,1 +1,45 @@
-edit.ejs
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ 
+  <title>Era</title> 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/edit.css">
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+ 
+</head> 
+  
+
+<div id="form_container">
+  <h4>Edit Progress Photo</h4>
+  <form action="/photos/<%= photo._id %>?_method=PUT" method="POST">
+    <h5 class="caption">Caption: <%= photo.caption %></h5>
+    <img class="activator" style="width:400px; height:400px" src="<%= photo.image %>" alt="">
+
+    <input type="text" placeholder="caption"/>
+    <input name="image" type="text" class="file" type="text"/>
+    <input class="submit-edit" type="submit", value="Submit">
+          <br/>
+  </form>
+ 
+</div>
+
+  
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+</body>
+</html>

@@ -1,7 +1,11 @@
 require('dotenv').load();
 var express = require('express');
+var multer = require('multer'); 
 var path = require('path');
 var http = require('http');
+var formidable = require('formidable');
+var io = require('socket.io')(http);
+
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -40,11 +44,12 @@ mongoose.connect(mongoURI);
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.use(methodOverride('_method'));
+
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(process.env.PORT || 3000);
@@ -67,7 +72,6 @@ var Photo = require('./models/Photo');
 var Workout = require('./models/Workout')
 
 app.use('/', routes);
-
 
 var User = require('./models/User');
 passport.use(new LocalStrategy(User.authenticate()));
@@ -110,6 +114,7 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
 
 
 

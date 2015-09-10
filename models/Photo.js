@@ -6,8 +6,10 @@ var User = require('./User');
 
 /* Define Photo Schema */
 var Photo = new mongoose.Schema({
-    image:      String, 
-    caption:    String, 
+    url:      String,
+    image:    String,
+    upload:   String, 
+    caption:   String,
     user: {
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User'

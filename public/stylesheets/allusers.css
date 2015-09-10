@@ -24,6 +24,12 @@ body {
   background-repeat: no-repeat;
 }
 
+.leggings{
+  position: relative;
+  width: 100%;
+  height: 350px;
+}
+
 .container{
   margin: 1rem auto;
   max-width: 220px;
@@ -194,4 +200,9 @@ a.navlinks {
   background-repeat: no-repeat;
 }
 
+.user-name{
+  position: relative;
+  text-align: center;
+  color: #FF0044;
+}
 

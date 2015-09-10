@@ -1,6 +1,6 @@
 var express = require('express');
 var router  = express.Router();
-
+var multer = require('multer');
 var passport       = require('passport');
 var methodOverride = require('method-override');
 
@@ -12,10 +12,13 @@ var PhotosController    = require('../controllers/Photos');
 var WorkoutsController  = require('../controllers/Workouts');
 var UsersController     = require('../controllers/Users');
 var ExercisesController = require('../controllers/Exercises');
+
+
 /* Adding a root route */
 router.get('/', function (req, res) {
   res.render('index', {user: req.user});
 });
+
 
 /* oauth authentication for fb/twitter accounts */
 router.get('/auth/facebook', passport.authenticate('facebook',
@@ -108,6 +111,5 @@ router.put('/users/:id',      isLoggedIn, UsersController.userUpdate);
 router.delete('/users/:id',   isLoggedIn, UsersController.userDelete);
 
 
+
 module.exports = router;
-
-

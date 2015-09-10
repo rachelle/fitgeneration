@@ -7,6 +7,14 @@ body {
 }
 
 
+
+.logoname {
+  color: #FF3555;
+  font-size: 25px;
+  padding-left: 20px;
+}
+
+
 h1 {
     text-align: center;
     line-height: 200px;
@@ -25,6 +33,7 @@ h1 {
     text-align: center;
     line-height: 200px;
     margin: auto;
+    margin-top: 30px;
     position: absolute;
     top: 61%;
     width: 100%;
@@ -35,7 +44,7 @@ h1 {
     -webkit-animation: text-fade 2.5s;
 }
 
-.overlay{
+/*.overlay{
   position: absolute;
   top:0;
   left:0;
@@ -45,7 +54,7 @@ h1 {
   z-index:0;
   background-color: rgba(0, 0, 0,0.6);
 }
-
+*/
 /* Log in styles */
 #login{
   width: 400px;
@@ -60,9 +69,9 @@ h1 {
 }
 
 #edit{
-  width: 400px;
+  width: 500px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 80px;
   margin-bottom: 30px;
   background: white;
   border-radius: 4px;
@@ -72,18 +81,29 @@ h1 {
 #login form{
   background:#f0f0f0;
   margin: 0;
+  height: 280px;
   padding: 30px 30px;
 }
 
 
-#edit-form form{
-  background:#f0f0f0;
-  padding: 30px 30px;
+.edit-form {
+  background-color: white;
+  padding: 20px 20px;
+  width: 500px;
+  height: 500px;
+  margin-top:20px;
+  margin-left: 240px;
+
+}
+
+.user-edit{
+  color: #FF0044;
+  text-align: center;
 }
 
 input{
-  width:92%;
-  background:#fff;
+
+  background:white;
   background: transparent;
   margin-bottom:4%;
   border:1px solid black;
@@ -106,7 +126,7 @@ input[type="email"], input[type="password"], {
 }
 
 input[type="text"], {
-  width:92%;
+
   background:#fff;
   background: transparent;
   margin-bottom:4%;
@@ -120,7 +140,8 @@ input[type="text"], {
 
 
 input[type="submit"]{
-  width:100%;
+  width: 200px;
+  height: 55px;
   background: #3399cc;
   background: transparent;
   border:0;
@@ -128,7 +149,10 @@ input[type="submit"]{
   padding:4%;
   font-size: 16px;
   color: white;
+  margin-left: 140px;
+  text-align: center;
   cursor: pointer;
+  margin-top: 10px;
   transition: background .3s;
   -webkit-transition: background .3s;
   border: 1px solid black;
@@ -140,9 +164,19 @@ input[type="submit"]:hover{
   background-color: tomato;
 }
 
+.edit-btn {
+  width: 90px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+a.nav{
+  color: white;
+}
+
 .social-btn{
  margin-top: 10px;
- width: 200px;
+ width: 100px;
  height: 50px;
  font-size: 14px;
  background-color: #415E9B;

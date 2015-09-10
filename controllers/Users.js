@@ -12,6 +12,13 @@ var methodOverride = require('method-override');
 //||||||||||||||||||||||||||--
 var User    = require('../models/User');
 
+
+/* renders a new user */
+function usersNew  (req, res) {
+  res.render('auth/register');
+};
+
+
 /* renders all users */
 var usersIndex = function(req, res, next){
   User.find(function(err, users) {
@@ -24,16 +31,16 @@ var usersIndex = function(req, res, next){
   });
 };
 
-/* renders a new user */
-function usersNew  (req, res) {
-  res.render('auth/register');
-};
+
 
 /* creates a new user */
 function usersCreate (req, res) {
   User.register(new User({
     username: req.body.username,
     name: req.body.name,
+    image: req.body.image,
+    avatar: req.body.avatar,
+    url:    req.body.url,
     weight: req.body.weight, 
     status: req.body.status
   }), req.body.password, function(err, user) {

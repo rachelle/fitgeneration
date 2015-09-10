@@ -1,0 +1,83 @@
+url(http://fonts.googleapis.com/css?family=Raleway:300,400,700);
+* {
+  box-sizing: border-box;
+  transition: border .25s ease; 
+}
+body {
+  text-align: center;
+  background: #fff;
+  color:#333;
+  font-family:"Raleway",Calibri,Arial,sans-serif;
+}
+
+@mixin rowMachine($numPerRow, $margin) {
+  width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+  &:nth-child(n) {
+    margin-bottom: $margin;
+     margin-top: 0;
+    margin-right: $margin;
+  }
+  &:nth-child(#{$numPerRow}n) {
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+a{
+  text-decoration: none;
+}
+h1{
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 72.8px;
+  margin:50px 0 0 0;
+}
+h2{
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 72.8px;
+  margin:1px 0 0 0;
+}
+.container {
+  padding: 4px;
+  margin:2px 0 20px 0;
+  text-align: center;
+  display:block;
+}
+.post {
+  border: 1px solid #E6E9ED;
+  transition: color .25s ease;
+  border-radius: .3em;
+  padding: .4rem;
+  float: left;
+  color: $grey;
+  box-shadow: 0 2px 4px #e6e6e6;
+  background: #f6f6f6;
+  &:hover{
+    color: $pink;
+    border-color: $grey;
+    }
+  }
+img {
+    width: 100%;
+    max-width:100%;
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    transition: border .25s ease;
+  }
+.post {
+    @include rowMachine(5, 2%);
+    @media (max-width: 1200px) {
+    @include rowMachine(4, 2%);
+  }
+  @media (max-width: 900px) {
+    @include rowMachine(3, 4%);
+  }
+    @media (max-width: 500px) {
+    @include rowMachine(2, 2%);
+  }
+  @media (max-width: 290px) {
+    @include rowMachine(1, 1%);
+    border: none;
+  }
+}
