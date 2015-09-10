@@ -145,7 +145,7 @@ input[type="submit"]{
   padding:4%;
   font-size: 16px;
   color: white;
-  margin-left: 70px;
+
   text-align: center;
   cursor: pointer;
   margin-top: 10px;
@@ -163,9 +163,19 @@ input[type="submit"]:hover{
 .edit-btn {
   width: 90px;
   margin-top: 20px;
-  margin-left: 10px;
+
 }
 
+.user-btn{
+  text-align: center;
+  width: 90px;
+  margin-top: 20px;
+  margin-left:20px;
+}
+
+.reg{
+  margin-left: 70px;
+}
 .social-btn{
  margin-top: 10px;
  width: 100px;
@@ -174,5 +184,8 @@ input[type="submit"]:hover{
  background-color: #415E9B;
 }
 
+#site-title{
+  margin-top: 15px;
+}
 
 
