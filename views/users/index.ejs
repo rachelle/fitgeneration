@@ -21,7 +21,7 @@
 
   <div class="nav-wrapper grey lighten-5">
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li class="navlinks"><a class="navlinks" href=" exercises/n">workout</a></li>
+      <li class="navlinks"><a class="navlinks" href="/photos">Photos</a></li>
       <li><a class="navlinks" href="/users/<%= user.id %>">Profile</a></li>
    
     
@@ -37,14 +37,17 @@
     <li>
        
       <div class="photo-wrapper">
-        <div class="text"></div>
+        <div class="text">
+      </div>
         <div class="photo">
    <img class="bg" src="<%= user.avatar %>" alt="">
+   <a href="/users/<%= user._id %>">
+    <%= user.name %></a>
           </div>
           <div class="text bottom"> 
-             <a href="users/<%= user.id %>"><%= user.name %></a>
+               
        
-            <ul class="collection with-header ">
+         
           </div>
         </div>
       </li>
@@ -52,60 +55,12 @@
       <li>
         <div class="photo-wrapper">
           <img class="bg" src="https://s-media-cache-ak0.pinimg.com/236x/ac/a6/02/aca602b53f3120db07b0e956bb2bcc75.jpg">
-            <div class="text">Top Text</div>
+            <div class="text"></div>
               <div class="photo"></div>
               <div class="text bottom">Bottom Text</div>
     </div>
   </li>
-  <li>
-    <div class="photo-wrapper">
- <img class="bg" src="https://s-media-cache-ak0.pinimg.com/236x/ac/a6/02/aca602b53f3120db07b0e956bb2bcc75.jpg">
-      <div class="text">Top Text</div>
-      <div class="photo"></div>
-      <div class="text bottom">Bottom Text</div>
-    </div>
-  </li>
-  <li>
-    <div class="photo-wrapper">
-       <img class="bg" src="https://s-media-cache-ak0.pinimg.com/236x/ac/a6/02/aca602b53f3120db07b0e956bb2bcc75.jpg">
-      <div class="text">Top Text</div>
-      <div class="photo"></div>
-      <div class="text bottom">Bo</div>
-    </div>
-  </li>
-  <li>
-    <div class="photo-wrapper">
-      <img class="bg" src="https://s-media-cache-ak0.pinimg.com/236x/ac/a6/02/aca602b53f3120db07b0e956bb2bcc75.jpg">
-      <div class="text">Top Text</div>
-      <div class="photo"></div>
-      <div class="text bottom">Bottom Text</div>
-    </div>
-  </li>
-  <li>
-    <div class="photo-wrapper">
-      <img class="bg" src="https://s-media-cache-ak0.pinimg.com/236x/ac/a6/02/aca602b53f3120db07b0e956bb2bcc75.jpg">
-      <div class="text">Top Text</div>
-      <div class="photo"></div>
-      <div class="text bottom">Bottom Text</div>
-    </div>
-  </li>
-  <li>
-    <div class="photo-wrapper">
-      <img class="bg" src="https://s-media-cache-ak0.pinimg.com/236x/ac/a6/02/aca602b53f3120db07b0e956bb2bcc75.jpg">
-      <div class="text">Top Text</div>
-      <div class="photo"></div>
-      <div class="text bottom">Bottom Text</div>
-    </div>
-  </li>
-  <li>
-    <div class="photo-wrapper">
-      <img class="bg" src="https://s-media-cache-ak0.pinimg.com/236x/ac/a6/02/aca602b53f3120db07b0e956bb2bcc75.jpg">
-      <div class="text">Top Text</div>
-      <div class="photo"></div>
-      <div class="text bottom">Bottom Text</div>
-    </div>
-  </li>
-</ul>
+  
 
   <div class="clear-fix"></div>
 </div></body></html>
