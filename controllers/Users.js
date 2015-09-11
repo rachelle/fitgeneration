@@ -36,11 +36,13 @@ function usersCreate (req, res) {
   User.register(new User({
     username: req.body.username,
     name: req.body.name,
+    height: req.body.height, 
+    status: req.body.status,
     image: req.body.image,
     avatar: req.body.avatar,
+    weight: req.body.weight,
+    
     url:    req.body.url,
-    weight: req.body.weight, 
-    status: req.body.status
   }), req.body.password, function(err, user) {
     // if (err) { console.log(err); return res.render('auth/register', {user: user}); }
     if (err) return res.render('auth/register', {user: user});
@@ -74,13 +76,20 @@ var userEdit = function(req, res, next){
   var id = req.params.id;
 
   User.findById({_id:id}, function(error, user){
-    if(error) res.json({message: 'Could not find user because ' + error});
-    res.render(
-      './users/edit', {
-        user: req.user
-      });
-  });
-};
+//     if(error) res.json({message: 'Could not find user because ' + error});
+//     res.render(
+//       './users/edit', {
+//         user: req.user
+//       });
+//   });
+// };
+
+  if(error) res.json({message: 'Could not edit user because: ' + error});
+    // API
+    // res.json({pirate: pirate});
+    res.render('./users/edit', {title: "Edit User", user: user});
+   });
+}
 
 /* user can update their profile */
 var userUpdate = function(req, res, next) {
@@ -88,7 +97,7 @@ var userUpdate = function(req, res, next) {
 
   User.findById({_id: id}, function(error, user) {
     if (error) res.json({message: 'Could not find user because ' + error});
-
+    if (req.body.height) user.height = req.body.height;
     if (req.body.name) user.name = req.body.name;
     if (req.body.weight) user.weight = req.body.weight;
     if (req.body.status) user.status = req.body.status;

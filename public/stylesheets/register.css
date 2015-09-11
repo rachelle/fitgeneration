@@ -180,7 +180,9 @@ input[type="submit"]:hover{
  margin-top: 10px;
  width: 100px;
  height: 50px;
- font-size: 14px;
+ font-family:'Open Sans',sans-serif;
+ font-size:95%;
+ color: #fff;
  background-color: #415E9B;
 }
 
@@ -188,4 +190,18 @@ input[type="submit"]:hover{
   margin-top: 15px;
 }
 
+.status-option{
+  color: black;
+  background:white;
+  background: transparent;
+  margin-bottom:4%;
+  border:1px solid black;
+  border: 1px solid black;
+  padding:4%;
+  font-size: 16px;
+  width: 330px;
+  font-family:'Open Sans', sans-serif;
+}
+
+}
 

@@ -29,23 +29,29 @@
   <div class="container">
       <div id="edit center-align">
         
-      <form  class="edit-form c" action="" method="POST">
+      <form action="/users/<%= user._id %>?_method=PUT" method="POST" class="edit-form">
         <h3 class="user-edit">edit profile</h3>
-        <input type="text" placeholder="email" name="email" />
-        <input type="text" placeholder="username" name="username"/>
-        <input type="text" placeholder="weight" name="weight"/>
-        <input type="text" placeholder="height" name="height"/>
+       
+        <input type="text" placeholder="<%= user.username %>" name="username"/>
+        <br/>
+        <input type="text" placeholder="<%= user.weight %>" name="weight"/>
+        <br/>
+        <input type="text" placeholder="<%= user.height %>" name="height"/>
+        <br/>
+        <input type="text" name="password" name="password" placeholder="password"/>
+        
+        <br/>
         <label>Select</label>
-        <select class="browser-default">
-          <option value="status" disabled selected>fitness status</option>
-          <option value="1">bulking</option>
-          <option value="2">maintaing</option>
-          <option value="2">toning</option>
-          <option value="2">muscle gaining</option>
-          <option value="3">shredding</option>
+        <select type="text" name="status" class="browser-default ">
+          <option name="status" value="status" disabled selected>fitness status</option>
+          <option name='status'value="1">bulking</option>
+          <option name="status" value="2">maintaing</option>
+          <option name="status" value="2">toning</option>
+          <option name="status" value="2">muscle gaining</option>
+          <option name="status" value="3">shredding</option>
         </select>
         <div class="center align">
-          <input type="submit" value="save changes" >
+          <input type="submit" name="action" value="save changes" >
         </div>
       </form>
      </div>

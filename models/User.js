@@ -7,19 +7,19 @@ var Photo = require('./Photo');
 var Exercise = require('./Exercise');
 var Workout = require('./Workout');
 var Message = require('./Message');
+var User = require('./User');
 
 var User = new mongoose.Schema({
   // the passport-local-mongoose module 
   // creates username and email for the User
   name:     String,
   weight:   Number,
-  gym:      String, 
   url:      String,
   avatar:   String,
+  height:   Number, 
   image:    String,
-  goals:    String,
   status:   String,
-
+ 
   photos: [{
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'Photo'

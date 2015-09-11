@@ -18,11 +18,7 @@
   <div class="nav-wrapper grey lighten-5">
     <span class="logoname">Logo</span>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a class="navlinks" href=" exercises/n">Workout</a></li>
-      <li><a class="navlinks" href="/users/<%= user.id %>">Profile</a></li>
-   
-      <li><a class="navlinks" href="/users">Users</a></li>
-      <li><a class="navlinks" href="/logout">Signout</a></li>
+     <li><a class="navlinks" href="/logout">Signout</a></li>
     </ul>
   </div>
 </nav>
@@ -42,28 +38,40 @@
 
       
   <nav id="navBottom">
-    <ul id="navTxtBtm">
-      <li id="posts">
-        <a href="/users/<%=user.id %>/edit">edit profile</a>
-      </li>
+    <ul id="navTxtBtm center-align">
       <li id="followers">
           <a href="/photos/new">Add photo</a>
       </li>
-      <li id="workout">
-        <a href="/workouts/new">custom exercise</a> 
+     <li id=
+     "followers">
+       <a href='/users/:id/edit'>Edit profile</a></li>
+      <li ="followers">
+        <a href="/workouts/new">Custom exercise</a> 
       </li>
-      <li id="exercise"> 
-          <a class="exercise" href="/exercises/new">create plan</a> 
+      <li id="following">
+        <a href="/exercises/new">Create plan</a> 
       </li>
+       <li id="followers"><a href="/users">Search Users</a></li>
     </ul>
   </nav>
-
-
-  <!-- users personal log -->
-  <div class="workout-plan">
-    <h3>Workout plan</h3> 
-  </div>
+  <div class="user-information">
+    <div class="container">
+      <ul class="collection with-header">
         
+        <li class="collection-item"><p class="teal-text">Weight:</p><%= user.weight %></li>
+        <li class="collection-item"><p class="teal-text">Height:</p><%= user.height %></li>
+        <li class="collection-item"><p class="teal-text">Status:</p><%= user.status %></li>
+        
+      </ul>
+         <div class="container center">
+            
+      
+          <a action="/users/<%= user._id %>?_method=DELETE"></a>
+           <button class="btn waves-effect waves-light btn-sent red accent-2  " type="submit" name="action">Delete Profile</button>
+         </form>
+    </div>
+    </div>
+  </div>
   <footer class="page-footer grey darken-2">
     <div class="container">
       <div class="row sticky">
