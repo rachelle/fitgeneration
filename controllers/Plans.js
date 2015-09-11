@@ -2,10 +2,23 @@ var express = require("express");
 var mongoose = require("mongoose"); 
 
 /* source in models */
-var User = require("../models/User"); 
-var Plan = require("../models/Plan"); 
+var Plan = require('../models/Plan'); 
+var User = require('../models/User'); 
+
 
 var router = express.Router(); 
+
+
+module.exports.renderPlansIndex = function(req, res, next){
+  Plan.find(function(err, plans){
+    if (err) res.send('> ' + err);
+      res.render('./plans', 
+      {
+        plans: plans, 
+        user: req.user
+      });
+  });
+};
 
 /* render a new random workout */
 module.exports.renderPlansNew = function(req, res, next) {
@@ -24,7 +37,7 @@ module.exports.renderPlansCreate = function(req, res){
   console.log(req.body); 
   plan.save(function(error){
     if(error){res.send('> ' + err);}
-    res.redirect("/plans/" + plan.id);
+    res.redirect('/plans/' + plan.id);
   });
 };
 
@@ -46,9 +59,9 @@ module.exports.deletePlan = function(req, res){
   var id = req.params.id; 
   var plan_id = req.params.id; 
 
-  Photo.findByIdAndRemove({_id:id}, function (error){
+  Plan.findByIdAndRemove({_id:id}, function (error){
     if (error) res.send(error);
-      res.redirect('./plans/new')
+      res.redirect('/plans');
   }); 
 };
     

@@ -68,6 +68,7 @@ app.locals.title = 'fitGeneration';
 
 /* source in models */
 var User = require('./models/User');
+var Plan = require('./models/Plan');
 var Photo = require('./models/Photo');
 var Workout = require('./models/Workout')
 

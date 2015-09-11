@@ -32,9 +32,9 @@ var User = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Exercise'
   }],
-  messages: [{
+  plans: [{
       type: mongoose.Schema.Types.ObjectId, 
-      ref: 'Messages'
+      ref: 'Plan'
   }]
 
 });

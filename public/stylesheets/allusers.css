@@ -24,12 +24,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.leggings{
-  position: relative;
-  width: 100%;
-  height: 350px;
-}
-
 .container{
   margin: 1rem auto;
   max-width: 220px;
@@ -53,14 +47,17 @@ a.navlinks {
 }
 
 .user-content {
-  margin-top: 20px;
+  margin-top: 30px;
   width: 600px;
   margin: 0;
+  margin-left: 10px;
   margin-top: 20px;
 }
 
 .user-info {
   height: 600px;
+
+  width: 300px;
 }
 
 .message-btn {
@@ -205,4 +202,6 @@ a.navlinks {
   text-align: center;
   color: #FF0044;
 }
+
+
 
