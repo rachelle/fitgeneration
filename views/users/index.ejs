@@ -18,6 +18,7 @@
 
  <img class="leggings" src="images/leggings.jpg">
  <nav>
+
   <div class="nav-wrapper grey lighten-5">
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li class="navlinks"><a class="navlinks" href=" exercises/n">workout</a></li>
@@ -32,17 +33,22 @@
   <h3>Users</h3> 
   <div class="content ">
   <ul class='feed'>
+    <% users.forEach(function(user) { %>
     <li>
+       
       <div class="photo-wrapper">
         <div class="text"></div>
         <div class="photo">
-          <img class='bg' src="https://s-media-cache-ak0.pinimg.com/236x/ac/a6/02/aca602b53f3120db07b0e956bb2bcc75.jpg">
+   <img class="bg" src="<%= user.avatar %>" alt="">
           </div>
           <div class="text bottom"> 
+             <a href="users/<%= user.id %>"><%= user.name %></a>
+       
             <ul class="collection with-header ">
           </div>
         </div>
       </li>
+      <% }); %>
       <li>
         <div class="photo-wrapper">
           <img class="bg" src="https://s-media-cache-ak0.pinimg.com/236x/ac/a6/02/aca602b53f3120db07b0e956bb2bcc75.jpg">

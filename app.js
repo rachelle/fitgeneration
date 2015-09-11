@@ -67,10 +67,12 @@ app.use(passport.session());
 app.locals.title = 'fitGeneration';
 
 /* source in models */
-var User = require('./models/User');
-var Plan = require('./models/Plan');
-var Photo = require('./models/Photo');
-var Workout = require('./models/Workout')
+var User     = require('./models/User');
+var Plan     = require('./models/Plan');
+var Photo    = require('./models/Photo');
+var Comment  = require('./models/Comment');
+var Workout  = require('./models/Workout');
+var Exercise = require('./models/Exercise');
 
 app.use('/', routes);
 
@@ -79,11 +81,8 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
 app.listen();
 console.log('3000 is the magic port');
-
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

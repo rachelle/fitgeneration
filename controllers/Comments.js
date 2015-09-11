@@ -1,6 +1,5 @@
 var express = require('express');
 var mongoose = require('mongoose'); 
-
 /* source in required models */
 var User = require('../models/User');
 var Photo = require('../models/Photo'); 

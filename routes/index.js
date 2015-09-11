@@ -111,8 +111,29 @@ router.delete('/plans/:id', isLoggedIn, PlansController.deletePlan);
 
 /* comments controller */
 
-router.post('/comments',    isLoggedIn, CommentsController.renderCommentsNew); 
-router.get('/comments/:id', isLoggedIn, CommentsController.renderCommentsShow); 
+router.post('/photos/:photo_id/comments', function(request, response, next){
+    Photo.findOne({_id: request.params.photo_id}, function(error, photo){
+        if(error) return response.send(error);
+        photo.comments.push({
+            content: request.body.content, 
+            user: request.body.user
+       });
+       photo.save(function(error){
+            if(error) return response.send(error);
+            response.send({
+                success: true
+            });
+       });
+    });
+});
+
+router.get('/photos/:photo_id/comments', function(request, response, next){
+    Photo.findOne({_id: request.params.photo_id}, function(error, photo){
+        if(error) return response.send(error);
+        response.send(photo.comments);
+    });
+});
+ 
 /* users controller */
 router.get('/auth/register',              UsersController.usersNew);
 router.post('/auth/register',             UsersController.usersCreate);
