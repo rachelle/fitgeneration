@@ -38,3 +38,13 @@ img{
   width: 400px;
   height:300px;
 }
+
+.list{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 120px;
+  color: white;
+  font-size: 16px;
+  background-color: #FE586B;
+  height: 30px;
+}

@@ -10,7 +10,6 @@ var Photo = new mongoose.Schema({
     image:    String,
     upload:   String, 
     caption:   String,
-    comments: [Comment.Schema],
     user: {
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User'

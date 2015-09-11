@@ -3,36 +3,103 @@
 <head> 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
  
-  <title>her era</title> 
+  <title>Era</title> 
   <link rel="stylesheet" type="text/css" href="css/ig.css">
-   <script src="jquery.js"></script>
+
  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
   <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
-   
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+  <script type="text/javascript" src="../js/register.js"></script>
+
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head> 
 <body> 
+<nav>
 
+  <div class="nav-wrapper grey lighten-5">
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li class="prog-links"><a class="prog-links" href="/exercises/new">workout</a></li>
+      <li class="prog-links"><a class="prog-links" href="/photos">Photos</a></li>
+      <li><a class="prog-links" href="/users/<%= user.id %>">Profile</a></li>
+   
+    
+      <li><a class="prog-links" href="/logout">Signout</a></li>
+    </ul>
+  </div>
+</nav>
+  
 
-<div class="col s12">
-          <% photos.forEach(function(photo) { %>
-          <div class="card">
-            <div class="card-image">
-               <img class="activator" style="width:400px; height:400px" src="<%= photo.image%>" alt="">
-              <span class="card-title"><%= photo.caption%></span>
-            </div>
-            <div class="card-content">
-              
-          </div>
-                <h5><a href="puppies/<%= photo.id %>"><%= photo.caption %></a></h5>
-           
-            </div>
-            
-          </div>
-        <% }); %>
+<div class="sweat-banner">
+ <img class="photo-banner" src="images/sweat.jpg">
+</div>
+ 
+  <h3 class="prog-text">Progress Feed</h3> 
+  <div class="content ">
+  <ul class='feed'>
+    <% photos.forEach(function(photo) { %>
+    <li>
+       
+      <div class="photo-wrapper">
+        <div class="text">
       </div>
+        <div class="photo">
+   <img class="bg" src="<%= photo.image %>" alt="">
+   <a href="/photos/<%= photo._id %>">
+    <%= photo.caption %></a>
+          </div>
+          <div class="text bottom"> 
+               
+       
+         
+          </div>
+        </div>
+      </li>
+      <% }); %>
+      <li>
+        <div class="photo-wrapper">
+          <img class="bg" src="https://s-media-cache-ak0.pinimg.com/236x/ac/a6/02/aca602b53f3120db07b0e956bb2bcc75.jpg">
+            <div class="text"></div>
+              <div class="photo"></div>
+              <div class="text bottom">Bottom Text</div>
+    </div>
+  </li>
+  
 
+  <div class="clear-fix"></div>
+</div></body></html>
+ 
+
+
+
+            
+
+              
+    <footer class="page-footer grey darken-2">
+    <div class="container">
+      <div class="row sticky">
+        <div class="col l6 s12">
+          <h5 class="white-text"></h5>
+          <p class="grey-text text-lighten-4">
+            <h5></h5>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text"></h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+            <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+            <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+            <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+         <h6>era © 2014 Copyright Text</h6>
+          <a class="grey-text text-lighten-4 right" href="#!"></a>
+        </div>
+      </div>
+    </footer>
 </body>
 </html>

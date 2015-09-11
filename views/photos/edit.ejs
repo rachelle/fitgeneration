@@ -13,16 +13,32 @@
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
  
 </head> 
+<nav>
+
+  <div class="nav-wrapper red lighten-2">
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li class="prog-links"><a class="prog-links" href="/exercises/new">workout</a></li>
+      <li class="prog-links"><a class="prog-links" href="/photos">Photos</a></li>
+      <li><a class="prog-links" href="/users/<%= user.id %>">Profile</a></li>
+   
+    
+      <li><a class="prog-links" href="/logout">Signout</a></li>
+    </ul>
+  </div>
+</nav>
+  
+
   
 
 <div id="form_container">
-  <h4>Edit Progress Photo</h4>
+  <h4 class="edit-text">edit photo</h4>
   <form action="/photos/<%= photo._id %>?_method=PUT" method="POST">
-    <h5 class="caption">Caption: <%= photo.caption %></h5>
+    
     <img class="activator" style="width:400px; height:400px" src="<%= photo.image %>" alt="">
+    <h5 class="caption">Caption: <%= photo.caption %></h5>
 
     <input type="text" placeholder="caption"/>
-    <input name="image" type="text" class="file" type="text"/>
+    <input name="image" type="text" class="file" placeholder="progress url" type="text"/>
     <input class="submit-edit" type="submit", value="Submit">
           <br/>
   </form>
@@ -41,5 +57,31 @@
  
 
  
+<footer class="page-footer grey darken-2">
+    <div class="container">
+      <div class="row sticky">
+        <div class="col l6 s12">
+          <h5 class="white-text"></h5>
+          <p class="grey-text text-lighten-4">
+            <h5></h5>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text"></h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+            <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+            <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+            <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+         <h6>era © 2014 Copyright Text</h6>
+          <a class="grey-text text-lighten-4 right" href="#!"></a>
+        </div>
+      </div>
+    </footer>
 </body>
 </html>

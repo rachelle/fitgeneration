@@ -1,37 +1,15 @@
 $(document).ready(function(){
-  
-  var feed = new Instafeed({
-  get: 'location',
-  sortBy: 'most-liked',
-  locationId: 760550,
-  accessToken: '658445562.97f1825.d265e772c4d1452ea0e208c671ecb2f8',
-  limit: '500',
-  resolution: 'low_resolution',
-  template: '<a class="post" href="{{link}}"><img src="{{image}}" />{{likes}} &hearts;</a>', // instafeed templating otions
-  filter: function(image) {
-    var blockedUsernames = [
-      'kairoodt'
-    ];
-
-    // check for blocked users
-    for (var i = 0; i < blockedUsernames.length; i++) {
-      if (image.user.username === blockedUsernames[i]) {
-        return false;
-      }
-    }
-
-    return true;
-  },
-  after: function() {
-    var images = $('#instafeed').find('post');
-  }
+$(".ins_popup").fancybox({
+openEffect : 'fade',
+closeEffect : 'fade'
 });
 
-feed.run();
-// loads more posts when scrolled down
-  $(window).scroll(function() {
-    if ($(window).scrollTop() +     $(window).height() > $(document).height() - 100) {
-      feed.next();
-      }
-    });
-}());
+$('#bcr_instagsbtn').click(function(){
+var bcr_tag = $('#bcr_instags').val();
+bcr_instag(
+ins_tag = bcr_tag, // tags
+ins_token = '141970.467ede5.edbc9c37472d41b790e1db8948793f11' // token
+);
+return false;
+});
+});

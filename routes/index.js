@@ -13,7 +13,7 @@ var WorkoutsController  = require('../controllers/Workouts');
 var UsersController     = require('../controllers/Users');
 var ExercisesController = require('../controllers/Exercises');
 var PlansController     = require('../controllers/Plans');
-var CommentsController  = require('../controllers/Comments');
+
 
 
 /* Adding a root route */
@@ -109,31 +109,6 @@ router.post('/plans',       isLoggedIn, PlansController.renderPlansCreate);
 router.get('/plans/:id',    isLoggedIn, PlansController.renderPlansShow);
 router.delete('/plans/:id', isLoggedIn, PlansController.deletePlan);
 
-/* comments controller */
-
-router.post('/photos/:photo_id/comments', function(request, response, next){
-    Photo.findOne({_id: request.params.photo_id}, function(error, photo){
-        if(error) return response.send(error);
-        photo.comments.push({
-            content: request.body.content, 
-            user: request.body.user
-       });
-       photo.save(function(error){
-            if(error) return response.send(error);
-            response.send({
-                success: true
-            });
-       });
-    });
-});
-
-router.get('/photos/:photo_id/comments', function(request, response, next){
-    Photo.findOne({_id: request.params.photo_id}, function(error, photo){
-        if(error) return response.send(error);
-        response.send(photo.comments);
-    });
-});
- 
 /* users controller */
 router.get('/auth/register',              UsersController.usersNew);
 router.post('/auth/register',             UsersController.usersCreate);
@@ -142,5 +117,7 @@ router.get('/users/:id',      isLoggedIn, UsersController.userShow);
 router.get('/users/:id/edit', isLoggedIn, UsersController.userEdit);
 router.put('/users/:id',      isLoggedIn, UsersController.userUpdate);
 router.delete('/users/:id',   isLoggedIn, UsersController.userDelete);
+
+
 
 module.exports = router;

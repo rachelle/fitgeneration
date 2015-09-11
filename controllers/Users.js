@@ -31,8 +31,6 @@ var usersIndex = function(req, res, next){
   });
 };
 
-
-
 /* creates a new user */
 function usersCreate (req, res) {
   User.register(new User({
@@ -111,6 +109,7 @@ var userDelete = function(req,res){
     res.redirect('/')
   });
 };
+
 
 /* exports user module */
 module.exports = {

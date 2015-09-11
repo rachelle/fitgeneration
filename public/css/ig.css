@@ -98,3 +98,18 @@ li:hover a.bg {
   height: 350px;
 }
 
+.photo-banner{
+  position: relative;
+  width: 100%;
+  height: 430px;
+}
+
+.prog-links{
+  margin: 0 ;
+  float: left;
+  color: black;
+}
+
+.prog-text{
+  color:#FE586B;
+}
