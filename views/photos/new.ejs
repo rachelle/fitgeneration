@@ -3,55 +3,50 @@
 <head> 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
  
-  <title>Cake Builder</title> 
-
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+  <title>Fitgeneration</title> 
+  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
   <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
   <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
   <link rel="stylesheet" type="text/css" href="/stylesheets/allusers.css">
-
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
 </head> 
 <body> 
+
+<!-- Navigation Bar -->
 <nav>
   <div class="nav-wrapper grey lighten-5">
     <span class="logoname">Logo</span>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a class="navlinks" href="./exercises">exercises</a></li>
-   
       <li><a class="navlinks" href="/users">users</a></li>
       <li><a class="navlinks" href="/logout">Signout</a></li>
     </ul>
   </div>
 </nav>
+<!-- End of Navigation Bar -->
 
 <div class="banner">
-  
-  
   <div class="photo-content center-align">
-    
-       <h3 class="track center-align">Fitness Journey</h3>
-      <h2 class="photo-title">+ progress photo</h2> 
-
-     
-      <div class="row">
-        <div class="col s12"> 
-          
-  <form action="/photos"  method="post">
-    <input type="text" placeholder="caption" name="caption"/>
-    <br/>
-    <input name="image" placeholder="progress url" class="file"  type="text"/>
-    <button type="submit" name="Submit" class="action-button" value="submit">Submit</button>
-  </form>  
+    <h3 class="track center-align">Fitness Journey</h3>
+    <h2 class="photo-title">+ progress photo</h2> 
+    <div class="row">
+      <div class="col s12"> 
+        
+        <!-- Photo Form -->
+        <form action="/photos"  method="post">
+          <input type="text" placeholder="caption" name="caption"/>
+          <br/>
+          <input name="image" placeholder="progress url" class="file"  type="text"/>
+          <button type="submit" name="Submit" class="action-button" value="submit">Submit</button>
+        </form> 
+        <!-- End of Photo Form --> 
+      s</div>
     </div>
-  </div>
-  
-
-
-
   </div> 
-    
 </div>
+
 </body> 
 </html>

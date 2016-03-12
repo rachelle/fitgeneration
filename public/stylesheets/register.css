@@ -63,31 +63,20 @@ h1 {
   color: #fff;
 }
 
-#edit{
-  width: 500px;
-  margin: 0 auto;
-  margin-top: 80px;
-  margin-bottom: 30px;
-  background: white;
-  border-radius: 4px;
-}
-
 #login form{
   background:#f0f0f0;
   margin: 0;
-  height: 280px;
-  padding: 30px 30px;
+  height: 220px;
+  padding: 10px 10px;
 }
-
 
 .edit-form {
   background-color: white;
-  padding: 20px 20px;
+  padding: 10px 10px;
   width: 500px;
   height: 500px;
-  margin-top:50px;
+  margin-top:40px;
   margin-left: 250px;
-
 }
 
 .user-edit{
