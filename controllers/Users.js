@@ -86,7 +86,7 @@ var userEdit = function(req, res, next){
 
   if(error) res.json({message: 'Could not edit user because: ' + error});
     // API
-    // res.json({pirate: pirate});
+    // res.json({user: user});
     res.render('./users/edit', {title: "Edit User", user: user});
    });
 }

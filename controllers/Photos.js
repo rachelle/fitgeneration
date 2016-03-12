@@ -57,6 +57,7 @@ module.exports.renderPhotosEdit = function(req, res, next){
   })
 };
 
+
 module.exports.renderPhotosUpdate = function(req, res, next){
   var id = req.params.id; 
 
