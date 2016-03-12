@@ -18,7 +18,7 @@
 <!-- Navigation Bar -->
 <nav>
   <div class="nav-wrapper">
-    <span class="logoname">Logo</span>
+    <span class="logoname">Fitgeneration</span>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a class="navlinks" href="sass.html">workout</a></li>
       <li><a class="navlinks" href="<%= user.id %>">Home</a></li>
@@ -34,11 +34,11 @@
     <form action="/users/<%= user._id %>?_method=PUT" method="POST" class="edit-form">
       <h3 class="user-edit">edit profile</h3>
        
-      <input type="text" placeholder="<%= user.username %>" name="username"/>
+      <input type="text" placeholder="username <%= user.username %>" name="username"/>
       <br/>
-      <input type="text" placeholder="<%= user.weight %>" name="weight"/>
+      <input type="text" placeholder="weight <%= user.weight %>" name="weight"/>
       <br/>
-      <input type="text" placeholder="<%= user.height %>" name="height"/>
+      <input type="text" placeholder="height: <%= user.height %>" name="height"/>
       <br/>
       <input type="text" name="password" name="password" placeholder="password"/>
       <br/>
