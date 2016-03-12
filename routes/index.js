@@ -14,8 +14,6 @@ var UsersController     = require('../controllers/Users');
 var ExercisesController = require('../controllers/Exercises');
 var PlansController     = require('../controllers/Plans');
 
-
-
 /* Adding a root route */
 router.get('/', function (req, res) {
   res.render('index', {user: req.user});
