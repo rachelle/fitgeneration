@@ -299,26 +299,26 @@ button:hover {
   margin-top: 10px;
 }
 
-.login input[type=button]{
+.login-btn{
   width: 260px;
   height: 35px;
-  background: #fff;
+  background:  #5379FA;
   border: 1px solid #fff;
   cursor: pointer;
   border-radius: 2px;
-  color: #a18d6c;
+  color: #fff;
   font-family: 'Exo', sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   padding: 6px;
   margin-top: 10px;
 }
 
-.login input[type=button]:hover{
+.login-btn:hover{
   opacity: 0.8;
 }
 
-.login input[type=button]:active{
+.login-btn:active{
   opacity: 0.6;
 }
 
@@ -332,7 +332,7 @@ button:hover {
   border: 1px solid rgba(255,255,255,0.9);
 }
 
-.login input[type=button]:focus{
+.login-btn:focus{
   outline: none;
 }
 

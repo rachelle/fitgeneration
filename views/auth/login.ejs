@@ -35,9 +35,11 @@
     </div>
     <br>
     <div class="login">
-        <input type="text" placeholder="username" name="user"><br>
+      <form action="/login" method="post"> 
+        <input type="text" placeholder="username" name="username"><br>
         <input type="password" placeholder="password" name="password"><br>
-        <input type="button" value="Login">
+        <button class="login-btn" type="submit" value="Login">Login</button>
+      </form>
     </div>
 
 </main> 
