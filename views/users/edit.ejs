@@ -3,61 +3,61 @@
 <head> 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
  
-  <title>Cake Builder</title> 
+  <title>Fitgeneration</title> 
+  <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="/../../stylesheets/register.css">
-
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
   <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
-
+  <!-- JS -->
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head> 
 <body> 
+
+<!-- Navigation Bar -->
 <nav>
-    <div class="nav-wrapper">
-      <span class="logoname">Logo</span>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a class="navlinks" href="sass.html">workout</a></li>
-        <li><a class="navlinks" href="<%= user.id %>">Home</a></li>
-        <li><a class="navlinks" href="/logout">Signout</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="nav-wrapper">
+    <span class="logoname">Logo</span>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a class="navlinks" href="sass.html">workout</a></li>
+      <li><a class="navlinks" href="<%= user.id %>">Home</a></li>
+      <li><a class="navlinks" href="/logout">Signout</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- End of Navigation Bar -->
 
-  <!-- edit form   -->
-  <div class="container">
-      <div id="edit center-align">
-        
-      <form action="/users/<%= user._id %>?_method=PUT" method="POST" class="edit-form">
-        <h3 class="user-edit">edit profile</h3>
+<!-- Edit Form  -->
+<div class="container">
+  <div id="edit center-align">
+    <form action="/users/<%= user._id %>?_method=PUT" method="POST" class="edit-form">
+      <h3 class="user-edit">edit profile</h3>
        
-        <input type="text" placeholder="<%= user.username %>" name="username"/>
-        <br/>
-        <input type="text" placeholder="<%= user.weight %>" name="weight"/>
-        <br/>
-        <input type="text" placeholder="<%= user.height %>" name="height"/>
-        <br/>
-        <input type="text" name="password" name="password" placeholder="password"/>
-        
-        <br/>
-        <label>Select</label>
-        <select type="text" name="status" class="browser-default ">
-          <option name="status" value="status" disabled selected>fitness status</option>
-          <option name='status'value="1">bulking</option>
-          <option name="status" value="2">maintaing</option>
-          <option name="status" value="2">toning</option>
-          <option name="status" value="2">muscle gaining</option>
-          <option name="status" value="3">shredding</option>
-        </select>
-        <div class="center align">
-          <input type="submit" name="action" value="save changes" >
-        </div>
-      </form>
-     </div>
-    </div>
+      <input type="text" placeholder="<%= user.username %>" name="username"/>
+      <br/>
+      <input type="text" placeholder="<%= user.weight %>" name="weight"/>
+      <br/>
+      <input type="text" placeholder="<%= user.height %>" name="height"/>
+      <br/>
+      <input type="text" name="password" name="password" placeholder="password"/>
+      <br/>
+      <label>Select</label>
+      <select type="text" name="status" class="browser-default ">
+        <option name="status" value="status" disabled selected>fitness status</option>
+        <option name='status'value="1">bulking</option>
+        <option name="status" value="2">maintaing</option>
+        <option name="status" value="2">toning</option>
+        <option name="status" value="2">muscle gaining</option>
+        <option name="status" value="3">shredding</option>
+      </select>
+      <div class="center align">
+        <input type="submit" name="action" value="save changes" >
+      </div>
+    </form>
+  </div>
+</div>
+<!-- End of Edit Form -->
 
-    </div>
-
-  </body>
+</body>
 </html>
