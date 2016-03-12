@@ -33,8 +33,7 @@ section {
 }
 
 
-a:active,
-a:hover {
+a:active, a:hover {
   outline: 0;
 }
 
@@ -67,7 +66,6 @@ body {
   position: fixed;
   width: 100%;
   border-bottom: 1px solid #DDD;
-  z-index: 9999;
 }
 
 .top-navigation > .content {
@@ -80,7 +78,6 @@ body {
 
 
 .content {
-  padding: 0 0.938rem;
   margin: 0 auto;
   min-width: 37.5rem;
   color: white;  
@@ -91,7 +88,6 @@ body {
   font-family: 'Roboto', sans-serif;
   color: #838994;
   font-size: 16px;
-  margin-top: 25px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -120,12 +116,13 @@ body {
   background-size: cover;
   width: 100%;
   overflow: auto;
+  padding-bottom: 50px;
 }
 
 .introduction h1, .introduction h3 {
   color: white;
   text-align: center;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .fit-title {
@@ -133,7 +130,7 @@ body {
 }
 
 .introduction h1 {
-  margin-top: 17.5rem;
+  margin-top: 9.5rem;
   font-size: 3.125rem;
 }
 
@@ -214,4 +211,135 @@ button:hover {
 .cases .devices p {
   font-weight: 300;
   font-size: 1.313rem;
+}
+
+/* User Login */
+@import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+.user-login{
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -40px;
+  bottom: -40px;
+  width: auto;
+  height: auto;
+  background-image: url(/images/weightrack.jpg);
+  background-size: cover;
+  -webkit-filter: blur(5px);
+  z-index: 0;
+}
+
+.grad{
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -40px;
+  bottom: -40px;
+  width: auto;
+  height: auto;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+  opacity: 0.6;
+}
+
+.header{
+  position: absolute;
+  top: calc(50% - 35px);
+  left: calc(35% - 255px);
+  z-index: 2;
+}
+
+.header div{
+  float: left;
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  font-size: 45px;
+  font-weight: 500;
+}
+
+.header div span{
+  color: #5379fa !important;
+}
+
+.login{
+  position: absolute;
+  top: calc(50% - 75px);
+  left: calc(50% - 50px);
+  height: 150px;
+  width: 350px;
+  padding: 10px;
+  z-index: 2;
+}
+
+.login input[type=text]{
+  width: 250px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 2px;
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 4px;
+}
+
+.login input[type=password]{
+  width: 250px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 2px;
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 4px;
+  margin-top: 10px;
+}
+
+.login input[type=button]{
+  width: 260px;
+  height: 35px;
+  background: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+  border-radius: 2px;
+  color: #a18d6c;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 6px;
+  margin-top: 10px;
+}
+
+.login input[type=button]:hover{
+  opacity: 0.8;
+}
+
+.login input[type=button]:active{
+  opacity: 0.6;
+}
+
+.login input[type=text]:focus{
+  outline: none;
+  border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=password]:focus{
+  outline: none;
+  border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=button]:focus{
+  outline: none;
+}
+
+::-webkit-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+::-moz-input-placeholder{
+   color: rgba(255,255,255,0.6);
 }
