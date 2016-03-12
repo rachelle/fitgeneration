@@ -2,41 +2,40 @@
 <html lang="en"> 
 <head> 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
- 
-  <title>her era</title> 
+  <title>Fitgeneration</title> 
   <link rel="stylesheet" type="text/css" href="/../../stylesheets/show.css">
 
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
   <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
 
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head> 
 <body> 
+
+<!-- Navigation Bar -->
 <nav>
   <div class="nav-wrapper grey lighten-5">
-    <span class="logoname">Logo</span>
+    <span class="logoname">Fitgeneration</span>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
      <li><a class="navlinks" href="/logout">Signout</a></li>
     </ul>
   </div>
 </nav>
+<!-- End of Navigation Bar -->
+
 <!-- users banner  -->
 <div class="col-lg-6 col-sm-6 center-align">
   <div id="pagewrap">
-  <section id="profilecontainer">
-    <div id="profileWrap">
-
- <img class="avatar" src="<%= user.avatar %>" alt="">
-
-      
-   <p class="userName"><%= user.username %></p>
+    <section id="profilecontainer">
+      <div id="profileWrap">
+        <img class="avatar" src="<%= user.avatar %>" alt="">
+        <p class="userName"><%= user.username %></p>
+      </div>
   </section>
 
-
-
-      
+  <!-- Users Nav -->
   <nav id="navBottom">
     <ul id="navTxtBtm center-align">
       <li id="followers">
@@ -57,45 +56,17 @@
   <div class="user-information">
     <div class="container">
       <ul class="collection with-header">
-        
         <li class="collection-item"><p class="teal-text">Weight:</p><%= user.weight %></li>
         <li class="collection-item"><p class="teal-text">Height:</p><%= user.height %></li>
         <li class="collection-item"><p class="teal-text">Status:</p><%= user.status %></li>
-        
       </ul>
-         <div class="container center">
-            
-      
-          <a action="/users/<%= user._id %>?_method=DELETE"></a>
-           <button class="btn waves-effect waves-light btn-sent red accent-2  " type="submit" name="action">Delete Profile</button>
-         </form>
-    </div>
+      <div class="container center">
+        <a action="/users/<%= user._id %>?_method=DELETE"></a>
+        <button class="btn waves-effect waves-light btn-sent red accent-2  " type="submit" name="action">Delete Profile</button>
+      </div>
     </div>
   </div>
-  <footer class="page-footer grey darken-2">
-    <div class="container">
-      <div class="row sticky">
-        <div class="col l6 s12">
-          <h5 class="white-text">Footer Content</h5>
-          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
-          © 2014 Copyright Text
-          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-        </div>
-      </div>
-    </footer>
+</div>
+
 </body>
 </html>

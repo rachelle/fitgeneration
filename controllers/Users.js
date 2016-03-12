@@ -41,8 +41,8 @@ function usersCreate (req, res) {
     image: req.body.image,
     avatar: req.body.avatar,
     weight: req.body.weight,
-    
     url:    req.body.url,
+  
   }), req.body.password, function(err, user) {
     // if (err) { console.log(err); return res.render('auth/register', {user: user}); }
     if (err) return res.render('auth/register', {user: user});
@@ -73,23 +73,17 @@ var userShow = function(req, res, next){
 
 /* user is able to edit their profile */
 var userEdit = function(req, res, next){
-  var id = req.params.id;
+  var id = req.params.user_id;
 
-  User.findById({_id:id}, function(error, user){
-//     if(error) res.json({message: 'Could not find user because ' + error});
-//     res.render(
-//       './users/edit', {
-//         user: req.user
-//       });
-//   });
-// };
+  User.find({_id: id}, function(error, user) { 
 
-  if(error) res.json({message: 'Could not edit user because: ' + error});
+    if(error) res.json({message: 'Could not find edit user because: ' + error}); 
     // API
-    // res.json({user: user});
-    res.render('./users/edit', {title: "Edit User", user: user});
-   });
-}
+    // res.json({user: user}); 
+    res.render('./users/edit', {title: "Edit User", user: user}); 
+  }); 
+};
+
 
 /* user can update their profile */
 var userUpdate = function(req, res, next) {
