@@ -51,7 +51,7 @@ app.use(methodOverride('_method'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(process.env.PORT || 3000);
+/*app.listen(process.env.PORT || 3000)*/;
 
 // auth middleware
 app.use(require('express-session')({
