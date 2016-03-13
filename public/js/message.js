@@ -1,4 +1,4 @@
-var socket = io(); 
+/*var socket = io(); 
 function submitFunction(){
   var from = $(#user).val(); 
   var message = $(#mess).val(); 
@@ -45,4 +45,4 @@ function makeId(){
  return text; 
 }
   }
-}
+}*/
