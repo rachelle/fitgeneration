@@ -31,13 +31,19 @@ app.set('view engine', 'ejs');
 //||||||||||||||||||||||||||--
 // CREATE MONGO DB
 //||||||||||||||||||||||||||--
-var mongoURI = process.env.MONGOLAB_URI;
-if (process.env.NODE_ENV === 'production') {
-  mongoURI = process.env.MONGOLAB_URI
-};
-else {
-  mongoURI = 'mongodb://localhost/fitgeneration'
+
+var mongoURI; 
+
+function setMongoUri() {
+  if process.env.NODE_ENV === "production" {
+    mongoURI = process.env.MONGOLAB_URI;
+  }
+  else {
+    mongoURI = 'mongodb://localhost/fitgeneration'
+  }
 }
+
+setMongoUri()
 
 //||||||||||||||||||||||||||--
 // CONNECT TO OUR MONGO DATABASE
