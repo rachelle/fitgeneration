@@ -35,6 +35,9 @@ var mongoURI = process.env.MONGOLAB_URI;
 if (process.env.NODE_ENV === 'production') {
   mongoURI = process.env.MONGOLAB_URI
 };
+else {
+  mongoURI = 'mongodb://localhost/fitgeneration'
+}
 
 //||||||||||||||||||||||||||--
 // CONNECT TO OUR MONGO DATABASE
