@@ -33,8 +33,8 @@ app.set('view engine', 'ejs');
 //||||||||||||||||||||||||||--
 var mongoURI = process.env.MONGOLAB_URI;
 if (process.env.NODE_ENV === 'production') {
-  mongoURI = process.env.MONGOLAB_URI
-};  
+  mongoURI = process.env.MONGOLAB_URI
+};
 
 //||||||||||||||||||||||||||--
 // CONNECT TO OUR MONGO DATABASE
