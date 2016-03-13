@@ -35,7 +35,7 @@ app.set('view engine', 'ejs');
 var mongoURI; 
 
 function setMongoUri() {
-  if process.env.NODE_ENV === "production" {
+  if(process.env.NODE_ENV === "production") {
     mongoURI = process.env.MONGOLAB_URI;
   }
   else {
