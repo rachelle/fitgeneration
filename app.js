@@ -32,9 +32,7 @@ app.set('view engine', 'ejs');
 // CREATE MONGO DB
 //||||||||||||||||||||||||||--
 var mongoURI = process.env.MONGOLAB_URI;
-if (process.env.NODE_ENV === 'production') {
-  mongoURI = process.env.MONGOLAB_URI
-};
+
 
 //||||||||||||||||||||||||||--
 // CONNECT TO OUR MONGO DATABASE
