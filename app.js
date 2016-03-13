@@ -31,7 +31,7 @@ app.set('view engine', 'ejs');
 //||||||||||||||||||||||||||--
 // CREATE MONGO DB
 //||||||||||||||||||||||||||--
-var mongoURI = 'mongodb://localhost/fitgeneration';
+var mongoURI = process.env.MONGOLAB_URI;
 if (process.env.NODE_ENV === 'production') {
   mongoURI = process.env.MONGOLAB_URI
 };
@@ -47,7 +47,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.use(methodOverride('_method'));
-
 
 app.use(express.static(path.join(__dirname, 'public')));
 
