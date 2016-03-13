@@ -1,4 +1,4 @@
-var MAX_UPLOAD_SIZE = 1.5; // in MB
+/*var MAX_UPLOAD_SIZE = 1.5; // in MB
 
 var socket = io(); 
 
@@ -314,4 +314,4 @@ function appendFile(URI,type,user){
 // Autoamtic scroll down message on any kind of chat message (text or file)
 function scrollDown(){
     $('#chat').animate({scrollTop: $('#chat').prop("scrollHeight")}, 500); 
-}
+}*/
