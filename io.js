@@ -1,4 +1,4 @@
-var io = require('socket-io')(); 
+/*var io = require('socket-io')(); 
 var Message = require('./models/Message'); 
 
 io.on('connection', function(socket) {
@@ -21,4 +21,4 @@ io.on('connection', function(socket) {
   });
 });
 
-module.exports = io; 
+module.exports = io; */

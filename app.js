@@ -4,7 +4,6 @@ var multer = require('multer');
 var path = require('path');
 var http = require('http');
 var formidable = require('formidable');
-var io = require('socket.io')(http);
 
 var favicon = require('serve-favicon');
 var logger = require('morgan');
