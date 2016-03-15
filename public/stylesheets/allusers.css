@@ -24,11 +24,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.container{
-  margin: 1rem auto;
-  max-width: 220px;
-  position: relative;
-}
 
 h1{
   font-size: 3rem;
@@ -56,7 +51,6 @@ a.navlinks {
 
 .user-info {
   height: 600px;
-
   width: 300px;
 }
 
@@ -72,14 +66,11 @@ a.navlinks {
   margin-bottom: 10px;
 }
 
-
-
 #photoform{
   width: 400px;
   margin: 0px auto;
   text-align: center;
   margin-top: 40px;
-
 }
 
 .photo-content{
@@ -92,8 +83,6 @@ a.navlinks {
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
   box-sizing: border-box;
   width: 600px;
- 
-  
 }
 
 #photoform input{
@@ -137,23 +126,20 @@ a.navlinks {
 /* end of photo new stylesheet */
 .track {
   color: tomato;
-
 }
 
-
 .exercise-content {
-
   background: white;
   border: 0 none;
   margin-top: 60px;
-  margin-left: 250px;
   border-radius: 3px;
-  padding: 20px 20px;
-  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-  box-sizing: border-box;
-  width: 500px;
-  height: 500px;
 
+  padding: 30px 30px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  display: inline-block;
+  width: 100%;
+  height: 480px;
+  position: relative;
 }
 
 #workout-form{
@@ -161,7 +147,7 @@ a.navlinks {
   margin: 0px auto;
   text-align: center;
   margin-top: 30px;
-
+  color: black;
 }
 
 #workout-form input{
@@ -170,7 +156,6 @@ a.navlinks {
   border-radius: 3px;
   margin-bottom: 5px;
   width: 100%;
- 
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
   color: black;
@@ -185,11 +170,10 @@ a.navlinks {
 .workout-title{
   font-size: 25px;
   color: #2C3E50;
- 
 }
 
 .workout-banner{
-  background:url("/images/girl-squat.jpg");
+  background:url("/images/kettlebell.jpg");
   position: absolute;
   width: 100%;
   height: 100%;
