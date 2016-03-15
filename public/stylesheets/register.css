@@ -47,8 +47,7 @@ h1 {
   width:100%;
   height:100%;
   display: block;
-  z-index:0;
-  background-color: rgba(0, 0, 0,0.6);
+  background-color: rgba(0, 0, 0,0.4);
 }
 
 /* Log in styles */
@@ -57,14 +56,11 @@ h1 {
   margin: 0 auto;
   margin-top: 100px;
   margin-bottom: 30px;
-  background: rgba(0,0,0,.8);
   border-radius: 4px;
   position: relative;
-  color: #fff;
 }
 
 #login form{
-  background:#f0f0f0;
   margin: 0;
   height: 220px;
   padding: 10px 10px;
@@ -121,7 +117,7 @@ input[type="text"], {
 }
 
 input[type="submit"]{
-  width: 160px;
+  width: 340px;
   height: 40px;
   background: #3399cc;
   background: transparent;
@@ -156,9 +152,7 @@ input[type="submit"]:hover{
   margin-left:20px;
 }
 
-.reg{
-  margin-left: 70px;
-}
+
 
 .social-btn{
  margin-top: 10px;
@@ -170,10 +164,10 @@ input[type="submit"]:hover{
  background-color: #415E9B;
 }
 
-#site-title{
+#sign-title {
+  text-align: center;
   margin-top: 15px;
 }
-
 .status-option{
   color: black;
   background:white;
