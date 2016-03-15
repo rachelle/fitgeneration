@@ -31,8 +31,11 @@ app.set('view engine', 'ejs');
 //||||||||||||||||||||||||||--
 // CREATE MONGO DB
 //||||||||||||||||||||||||||--
-var mongoURI = process.env.MONGOLAB_URI;
-
+// create mongoURI
+var mongoURI = 'mongodb://localhost/fitgeneration';
+if (process.env.NODE_ENV === 'production') {
+  mongoURI = process.env.MONGOLAB_URI
+};
 
 //||||||||||||||||||||||||||--
 // CONNECT TO OUR MONGO DATABASE
@@ -108,8 +111,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
-
-
 
 module.exports = app;
