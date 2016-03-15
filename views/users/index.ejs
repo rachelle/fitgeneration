@@ -20,26 +20,32 @@
 <img class="leggings" src="images/leggings.jpg">
  
 <!-- user index navigation -->
-<nav>
-  <div class="nav-wrapper grey lighten-5">
-    <div class="col s12 m12 l12 center-align">
-      <ul>
-        <li><a class="navlinks" href="/workouts">workouts</a></li>
-        <li><a class="navlinks" href="/photos">Photos</a></li>
-        <li><a class="navlinks" href="/users/<%= user.id %>">Home</a></li>
-        <li><a class="navlinks" href="/logout">Signout</a></li>
+
+
+<div class="container">
+  <nav>
+   <div class="nav-wrapper grey lighten-5 center">
+    <div class="col s12 m12 l12">
+      <ul class="userNav">
+        <li><a class="userNav-links" href="/photos">Photos</a></li>
+        <li><a class="userNav-links" href="/users/<%= user.id %>">Home</a></li>
+        <li><a class="userNav-links" href="/logout">Signout</a></li>
       </ul>
     </div>
   </div>
 </nav>
+</div>
 <!-- end of user nav -->
 
 <!-- user search gallery -->
+<div class="container">
+  <div class="row"> 
+    <div class="col s12 m12 l12"> 
 <div class="content">
-<h3>Users</h3> 
+<h3 class="center">Explore Users</h3> 
   <ul class='feed'>
     <% users.forEach(function(user) { %>
-    <li>
+    <li class="feed-links">
       <div class="photo-wrapper">
         <div class="text"></div>
         <div class="photo">
@@ -52,7 +58,7 @@
     </li>
     <% }); %>
     
-    <li>
+    <li class="feed-links">
       <div class="photo-wrapper">
         <img class="bg" src="https://s-media-cache-ak0.pinimg.com/236x/ac/a6/02/aca602b53f3120db07b0e956bb2bcc75.jpg">
         <div class="text"></div>
@@ -61,7 +67,10 @@
       </div>
     </li>
   </ul>
-  <div class="clear-fix"></div>
+  
+</div>
+</div>
+</div>
 </div>
 <!-- end of user search gallery -->
  

@@ -3,6 +3,7 @@ body {
   margin: 0 auto;
   text-align:center;
 }
+
 .content {
   margin: 0 auto;
   padding: 5px;
@@ -10,18 +11,25 @@ body {
   clear: left;
 }
 
-.logoname {
-  color: #FF3555;
-  font-size: 25px;
-  padding-left: 20px;
+.userNav { 
+  display: inline-block;
 }
 
-ul {
-  margin: 0;
+.userNav-links { 
+  color: #FF5A5F;
   display: block;
+  float: right;
+  font-size: 18px;
+  padding-left: 50px;
+  list-style: none;
 }
 
-ul:after {
+.feed {
+  margin: 0;
+  display: inline-block;
+}
+
+.feed:after {
   clear: both;
   display: block;
   height: 0;
@@ -30,12 +38,8 @@ ul:after {
   line-height: 0.01em; 
 }
 
-.navlinks{
-  color:  #FF0044;
-}
-
-ul li {
-  list-style:none;
+.feed .feed-links{
+  list-style: none;
   display: inline;
   position: relative;
   float: left;
@@ -45,7 +49,7 @@ ul li {
 
 .photo-wrapper {
   position: relative;
-  text-align:center;
+  text-align: center;
   margin: 0 20px 10px;
 }
 
@@ -58,9 +62,11 @@ ul li {
   transition: opacity .1s ease-out 0.1s;
   pointer-events: none;
 }
-li:hover .text {
+
+.feed-links:hover .text {
   opacity: 1;
 }
+
 .photo {
   width: 400px;
   height: 160px;
@@ -72,6 +78,7 @@ li:hover .text {
   bottom: -25px;
   width: 100%;
 }
+
 .bg {
   position: absolute;
   top: 25px;
@@ -84,7 +91,7 @@ li:hover .text {
   transition: all 0.15s ease-out 0.1s;
 }
 
-li:hover a.bg {
+.feed-links:hover a.bg {
   margin: -28px -12px;
   padding: 28px 12px;
 }
